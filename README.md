@@ -6,12 +6,12 @@ Pipeline for cleaning, mapping and coverage plotting, and SNP calling from the g
 
 ### Cleaning
 
-See `Cleaning` directory 
+See `01_Cleaning` directory 
 
 ### Mapping and coverage plotting
 
-See `MappingAndCoveragePlotting`
+See `02_MappingAndCoveragePlotting`
 
 ### SNP Calling
 
-See `SNPCalling` directory
+See `03_SNPCalling` directory
