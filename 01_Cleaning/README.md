@@ -36,7 +36,7 @@ To optimize the execution of this process, I wrote the `01_Cleaning.py` python s
 
 This script needs a sample sheet file in `csv` format where the ID of each sample is listed. 
  - The sample sheet is in the main directory: `~/Umaydis_experimental_Evolution/USMA_EE_Colonies_SampleSheet.csv`.
- - python3 is required to execute this script.
+ - `python3` is required to execute this script.
 
 Execute `01_Cleaning.py` script
 ```
@@ -44,9 +44,9 @@ python3 01_Cleaning.py -c ../USMA_EE_Colonies_SampleSheet.csv
 
 ```
 
-Once this script is executed, a directory named `shFiles` will be created. In this directory will be the `sh` files to be executed.
+Once this script is executed, a directory named `shFiles` will be created. In this directory will be the `.sh` files to be executed.
 
-You can run these `sh` files with the next command:
+You can run these `.sh` files with the next command:
 
 ```
 # Example for sample 2021EE01
