@@ -1,1 +1,1 @@
-Directory for `bam` or `cram` files
+Directory of `bam` or `cram` files
