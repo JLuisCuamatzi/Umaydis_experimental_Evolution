@@ -16,4 +16,4 @@ See `02_MappingAndCoveragePlotting`
 
 ### SNP Calling
 
-See `03_SNPCalling` directory
+See `03_SNP_Calling` directory
