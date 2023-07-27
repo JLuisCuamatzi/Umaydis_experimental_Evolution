@@ -1,6 +1,15 @@
 ## 02.- Mapping and Coverage Plotting
 
-In this stage, the reads in `fastq` files were aligned to the reference genome of <i>Ustilago maydis</i>
+In the next stage of our pipeline, we did the following:
+
+02.1.- We aligned the short-reads to the reference genome of <i>U. maydis</i>, and subsequently, we extracted the depth coverage of each base.
+
+02.2.- We computed and plotted the normalized coverage of each genome in non-overlapping windows of 1 kb.
+
+
+### 02.1.- Mapping
+
+In this stept, the reads in `fastq` files were aligned to the reference genome of <i>Ustilago maydis</i>
 
 For the alignment we used [BWA_mem]([https://academic.oup.com/bioinformatics/article/26/5/589/211735) using the next code:
 
@@ -41,7 +50,7 @@ echo "End mapping for 2021EE01"
 samtools view -T ${reference_genome} -C -o ${cram_mrkdup_addgp_file} ${bam_mrkdup_addgp_file}
 samtools index ${cram_mrkdup_addgp_file}
 
-# Remove bam files
+# Remove bam files if cram already exists
 if [[ -s ${cram_mrkdup_addgp_file} ]]; then rm -rf ${bam_file}; fi
 if [[ -s ${cram_mrkdup_addgp_file} ]]; then rm -rf ${bam_mrkdup_file}; fi
 if [[ -s ${cram_mrkdup_addgp_file} ]]; then rm -rf ${bam_mrkdup_addgp_file}; fi
@@ -76,3 +85,62 @@ You can run these `.sh` files with the next command:
 sh shFiles/2021EE01_Mapping.sh
 
 ```
+
+The output files of this process are:
+  - `cram` files located in `bamFiles/`
+  - `depth.gz` files located in `coverageFiles/` with the depth of coverage of each base.
+
+### 02.2.- Computing and Plotting Normalized Coverage
+
+The next step is calculate the normalized coverage in non-overlapping windows of 1 kb.
+   - Normalized coverage: median coverage depth of each windows / global median coverage depth
+   
+ For this task, we use a <b>python script</b> to compute the normalized coverage and a <b>R script</b> to plot the raw and normalized coverage
+ 
+```
+echo 'Start to Compute Normalized Coverage for 2021EE01'
+
+# variables:
+FileDepthCoverage="coverageFiles/2021EE01_Q30.depth.gz"
+FileNormalizedCoverage="normalizedCoverageTables/2021EE01_NormalizedCoverage.txt"
+sample="2021EE01"
+
+
+# Compute Normalized Coverage with the next python script: ComputeMedianCoverage.py
+python3 ComputeMedianCoverage.py --input ${FileDepthCoverage} --output ${FileNormalizedCoverage} -w 1000
+
+
+# Create the coverage plots (raw and normalized) with the next R script: CoveragePlottR.R
+Rscript CoveragePlottR.R --normalizedCov_file ${FileNormalizedCoverage} --window_size 1000 --sample ${sample} --chr "USMA_521_v2_"
+
+```
+
+To optimize the execution of this process, I wrote the `02.1_NormalizedCoverage_and_Plotting.py` python script that generates sh files with the aforementioned commands.
+
+Execute `02.1_NormalizedCoverage_and_Plotting.py` script
+
+```
+python3 02.1_NormalizedCoverage_and_Plotting.py -c ../USMA_EE_Colonies_SampleSheet.csv
+
+```
+
+Once this script is executed, the `.sh` files will be saved in `shFiles`.
+
+You can run these `.sh` files with the next command:
+
+```
+# Example for sample 2021EE01
+
+sh shFiles/2021EE01_NormCovAndPlotting.sh
+
+```
+
+
+
+
+
+
+
+
+
+
