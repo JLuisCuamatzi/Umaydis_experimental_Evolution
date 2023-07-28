@@ -135,6 +135,11 @@ sh shFiles/2021EE01_NormCovAndPlotting.sh
 
 ```
 
+### Ratio in coverage 
+
+Finally, the ratio between coverage in each sample against reference sample (<i>U. maydis</i> SG200) was computed in R in the next script:
+
+`Coverage_Ratio_Log2.Rmd`
 
 
 
