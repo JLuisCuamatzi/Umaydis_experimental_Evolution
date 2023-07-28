@@ -2,10 +2,15 @@
 
 In the next stage of our pipeline, we did the following:
 
-02.1.- We aligned the short-reads to the reference genome of <i>U. maydis</i>, and subsequently, we extracted the depth coverage of each base.
+<b>02.1.- Mapping</b>
+ - We aligned the short-reads to the reference genome of <i>U. maydis</i>, and subsequently, from the alignment we extracted the depth coverage of each base.
 
-02.2.- We computed and plotted the normalized coverage of each genome in non-overlapping windows of 1 kb.
-
+<b>02.2.- Computing and Plotting Normalized Coverage </b>
+ - We computed and plotted the normalized coverage of each genome in non-overlapping windows of 1 kb.
+ 
+b>02.3.- Computing the Ratio of Normalized Coverage </b>
+ - We computed the ratio between normalized coverage in each sample against the initial strain (<i>U. maydis</i> SG200)
+ 
 
 ### 02.1.- Mapping
 
@@ -135,9 +140,9 @@ sh shFiles/2021EE01_NormCovAndPlotting.sh
 
 ```
 
-### Ratio in coverage 
+### 02.3.- Computing the Ratio of Normalized Coverage
 
-Finally, the ratio between coverage in each sample against reference sample (<i>U. maydis</i> SG200) was computed in R in the next script:
+Finally, the ratio between normalized coverage in each sample against reference sample (<i>U. maydis</i> SG200) was computed in R in the next script:
 
 `Coverage_Ratio_Log2.Rmd`
 
