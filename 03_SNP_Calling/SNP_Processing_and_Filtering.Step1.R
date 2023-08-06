@@ -2,50 +2,40 @@
 # first, clean env
 rm(list = ls())
 #load libraries
-library(vcfR)
-library(dplyr)
-library(tidyr)
-library(tidyverse)
-library(data.table)
-library(dplyr)
-library(tidyr)
-library(UpSetR)
-library(ComplexHeatmap)
-library(ggplot2)
-library(Cairo)
-library(cowplot)
-library(ggthemes)
-library(circlize)
-library(optparse)
+library_names <- c("vcfR", "dplyr", "tidyr", "tidyverse", "data.table", "ComplexHeatmap", "ggplot2", "Cairo", "cowplot", "ggthemes", "circlize")
 
-option_list = list(
-  make_option(c("-v", "--workingDir"), type="character", default=NULL, 
-              help="Path of main working directory", metavar="character")
-)
+# Load each library. Install it requires it
+for (lib in library_names) {
+  if (!requireNamespace(lib, quietly = TRUE)) {
+    suppressPackageStartupMessages(install.packages(lib, dependencies = TRUE))
+  }
+  suppressPackageStartupMessages(library(lib, character.only = TRUE))
+}
 
-opt_parser=OptionParser(option_list=option_list)
 
-opt=parse_args(opt_parser)
 
 # read custom functions
-#setwd("/mnt/Guanina/lmorales/Public/Ustilago_experimental_evolution_2021/bin/RScripts")
-
-functionDir <- paste0(opt$workingDir, "bin/RScripts")
-
-setwd(functionDir)
 source(file = "Functions_Filtering_SNPs.R")
 ## 
 # change dir to path were are the VCF files
-#setwd("/mnt/Guanina/lmorales/Public/Ustilago_experimental_evolution_2021/data/VCF/bcftools/VCF_files")
-vcfDir <- paste0(opt$workingDir, "data/VCF/bcftools/VCF_files")
+
+vcfDir <- paste0("vcfFiles/")
 
 setwd(vcfDir)
 
 # Create directories for outputs
-# Directory to Save Plots
-#dir.2save.plots <- "/mnt/Guanina/lmorales/Public/Ustilago_experimental_evolution_2021/analysis/SNP_Inference/bcftools/Plots/"
+dir.2save.SNPCalling <- paste0("../SNPCalling/")
+if (dir.exists(dir.2save.SNPCalling)) {
+  print("Directory already exists!")
+} else {
+  print (paste0("Directory ", dir.2save.SNPCalling, " does not exists!"))
+  print ("Directory will be created")
+  dir.create(dir.2save.SNPCalling)
+}
 
-dir.2save.plots <- paste0(opt$workingDir, "analysis/SNP_Inference/bcftools/Plots/")
+
+# Directory to Save Plots
+dir.2save.plots <- paste0("../SNPCalling/Plots/")
 if (dir.exists(dir.2save.plots)) {
   print("Directory already exists!")
 } else {
@@ -55,9 +45,7 @@ if (dir.exists(dir.2save.plots)) {
 }
 
 # Directory to Save Tables
-#dir.2save.tables <- "/mnt/Guanina/lmorales/Public/Ustilago_experimental_evolution_2021/analysis/SNP_Inference/bcftools/Tables/"
-
-dir.2save.tables <- paste0(opt$workingDir, "analysis/SNP_Inference/bcftools/Tables/")
+dir.2save.tables <- paste0("../SNPCalling/Tables/")
 if (dir.exists(dir.2save.tables)) {
   print("Directory already exists!")
 } else {
@@ -100,10 +88,10 @@ rm(i, sample.list) # remove i "index" and sample.list
 my.vcf.df <- ls(pattern = "df.vcf.") # list objects with pattern 
 my.vcf.df <- mget(my.vcf.df)         # get a list with each data frames
 my.vcf.df <- bind_rows(my.vcf.df)    # concatenate all df into a single df
+setDT(my.vcf.df) # transform to DT format for efficient processing with package: data.table 
 
 rm(list = ls(pattern = "df.vcf.")) # remove individual dfs
 
-setDT(my.vcf.df) # transform to DT format for efficient processing with package: data.table 
 
 # create background data frame 
 df.vcf.SG200.BGI <- my.vcf.df[Sample == "2021EE01"] # 883 rows
@@ -275,7 +263,7 @@ rm(plot06.distribution.AllSNPs, plot07.distribution.NoSG200, plot08.distribution
 
 
 ### work with SNPs in Q > 200
-df.info <- fread(paste0(opt$workingDir, "SampleInfo.csv"))
+df.info <- fread("../../SampleInfo.csv")
 # add sample info to filtered vcf q >200
 filtered.vcf.df.Q200 <- filtered.vcf.df.Q200 %>% 
   left_join(select(df.info, ID, Name, Line, OrderName), by = c("Sample" = "ID"))

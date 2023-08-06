@@ -1,70 +1,53 @@
 # author: jcuamatzi
 # first, clean env
 rm(list = ls())
-#load libraries
-library(vcfR)
-library(dplyr)
-library(tidyr)
-library(tidyverse)
-library(data.table)
-library(dplyr)
-library(tidyr)
-library(UpSetR)
-library(ComplexHeatmap)
-library(ggplot2)
-library(Cairo)
-library(cowplot)
-library(ggthemes)
-library(circlize)
-library(optparse)
-library(scales)
 
-option_list = list(
-  make_option(c("-v", "--workingDir"), type="character", default=NULL, 
-              help="Path of main working directory", metavar="character")
-)
+# Load libraries
+# Libraries
+library_names <- c("vcfR", "dplyr", "tidyr", "tidyverse", "data.table", "ComplexHeatmap", "ggplot2", "Cairo", "cowplot", "ggthemes", "circlize", "scales")
 
-opt_parser=OptionParser(option_list=option_list)
+# Load each library. Install it requires it
+for (lib in library_names) {
+  if (!requireNamespace(lib, quietly = TRUE)) {
+    suppressPackageStartupMessages(install.packages(lib, dependencies = TRUE))
+  }
+  suppressPackageStartupMessages(library(lib, character.only = TRUE))
+}
 
-opt=parse_args(opt_parser)
+# Create directoris to export plots and tables
 
-dir.2save.plots <- paste0(opt$workingDir, "analysis/SNP_Inference/bcftools/Plots/")
+  # Directory to Save Plots
+dir.2save.plots <- paste0( "SNPCalling/Plots/")
 if (dir.exists(dir.2save.plots)) {
-  print("Directory already exists!")
+  print (paste0("Directory ", dir.2save.plots, " already exists!"))
 } else {
   print (paste0("Directory ", dir.2save.plots, " does not exists!"))
-  print ("Directory will be created")
+  print (paste0("Directory ", dir.2save.plots, " will be created!"))
   dir.create(dir.2save.plots)
 }
 
 # Directory to Save Tables
-#dir.2save.tables <- "/mnt/Guanina/lmorales/Public/Ustilago_experimental_evolution_2021/analysis/SNP_Inference/bcftools/Tables/"
-
-dir.2save.tables <- paste0(opt$workingDir, "analysis/SNP_Inference/bcftools/Tables/")
+dir.2save.tables <- paste0("SNPCalling/Tables/")
 if (dir.exists(dir.2save.tables)) {
-  print("Directory already exists!")
+  print (paste0("Directory ", dir.2save.tables, " already exists!"))
 } else {
   print (paste0("Directory ", dir.2save.tables, " does not exists!"))
-  print ("Directory will be created")
+  print (paste0("Directory ", dir.2save.tables, " will be created!"))
   dir.create(dir.2save.tables)
 }
 
-# read custom functions
-#setwd("/mnt/Guanina/lmorales/Public/Ustilago_experimental_evolution_2021/bin/RScripts")
-
-functionDir <- paste0(opt$workingDir, "bin/RScripts")
-
-setwd(functionDir)
+# Read custom functions to process SNPs
 source(file = "Functions_Filtering_SNPs.R")
 
-# 1) read sample sheet
-df.samples <- fread(paste0(opt$workingDir, "USMA_EE_Colonies_SampleSheet.csv"))
+# Read sample sheet and files with more metadata from samples
+df.samples <- fread("../USMA_EE_Colonies_SampleSheet.csv") # sample name
+df.info <- fread("../SampleInfo.csv") # metadata about generations, treatment group, etc
+
 list.colonies <- df.samples$SampleID
 
 # change current directory to directory that contains files: {sampleID}_SNPs_AlleleDepth.txt
-setwd(paste0(opt$workingDir, "data/bam/All_SNPs_AlleleDepth"))
-
-# 2) read txt files with depth allele coverage
+setwd("SNPCalling/Tables/Check_SNPs_AF/")
+# A) Read .txt files with depth allele coverage
 # use the next for loop to read the files and order the columns into a data frame
 for (i in list.colonies) {
   df.name <- paste0("df.colony.", i)
@@ -74,8 +57,8 @@ for (i in list.colonies) {
   
   df.tmp <- fread(file2read)
   
-  names(df.tmp) <- c("Chr", "Position", "Ref", "Alt", "Depth")
-  df.tmp$Sample <- paste0(i)
+  names(df.tmp) <- c("Chr", "Position", "Ref", "Alt", "Depth")  # rename cols
+  df.tmp$Sample <- paste0(i)    # here, I created a column to paste the sample
   
   
   df.tmp <- transform.table.snp.freq(df.snp.freq = df.tmp)
@@ -85,20 +68,20 @@ for (i in list.colonies) {
   
 }
 
-# 3) concatenate all in one df
+# B) Concatenate the data frame generated in the previous for-loop into a single df
 df.Colony.Frequency <- ls(pattern = "df.colony.") # list objects with pattern 
 df.Colony.Frequency <- mget(df.Colony.Frequency)         # get a list with each data frames
 df.Colony.Frequency <- bind_rows(df.Colony.Frequency)    # concatenate all df into a single df
 
 rm(list = ls(pattern = "df.colony.2021")) # remove individual dfs
 
-# add line information from df.samples to 'df.Colony.Frequency'
-df.info <- fread(paste0(opt$workingDir, "SampleInfo.csv"))
+setwd("../../../") # go back to the directory "~/03_SNP_Calling/"
 
+# add line information from df.samples to 'df.Colony.Frequency'
 df.Colony.Frequency <- df.Colony.Frequency %>% left_join(select(df.info, ID, Name, Line), by = c("Sample" = "ID"))
 
 #read SNPs info (SNPs identified after Q200)
-df.SNP.Q200 <- fread(paste0(opt$workingDir, "analysis/SNP_Inference/bcftools/Tables/Shared.SNP.NoSG200.Q200.csv"))
+df.SNP.Q200 <- fread("SNPCalling/Tables/Shared.SNP.NoSG200.Q200.csv")
 
 df.SNP.Q200.tmp <- df.SNP.Q200
 
@@ -132,9 +115,8 @@ df.2concatenate <- df.Colony.Frequency %>%
   select(NucleotideType, PerFreq, SNP_ID_Sample, Sample)
 
 # read filtered df q200 from step 1  
-filtered.vcf.df.Q200 <- fread(paste0(opt$workingDir, "analysis/SNP_Inference/bcftools/Tables/Filtered.Variants.Q200.csv"))
+filtered.vcf.df.Q200 <- fread(  "SNPCalling/Tables/Filtered.Variants.Q200.csv")
 
-# concatenate the output of line 168 in SNPS_Allele_Depth.R
 filtered.vcf.df.Q200 <- filtered.vcf.df.Q200 %>% 
   left_join(select(df.2concatenate, NucleotideType, PerFreq, SNP_ID_Sample), 
             by = c("SNP_ID_Sample" = "SNP_ID_Sample"))  
@@ -142,7 +124,7 @@ filtered.vcf.df.Q200 <- filtered.vcf.df.Q200 %>%
 # filter by threshold of PerFreq (Allele frequency in percentage) >= 0.9 (meaning 90%)
 # 
 filtered.vcf.df.Q200.AF90 <- filtered.vcf.df.Q200 %>% 
-  filter(PerFreq >= 0.9) # reduce to 45 obs form 47
+  filter(PerFreq >= 0.9) # reduce to 45 obs from 47
 # count SNP frequency
 SNP.Num.Q200.AF90 <- filtered.vcf.df.Q200.AF90 %>% 
   group_by(SNP_ID) %>% 
@@ -161,7 +143,6 @@ SNPs.in.SG200 <- SNPs.in.SG200 %>% filter(!NucleotideType %in% c("Reference", "O
 filtered.vcf.df.Q200.AF90 <- filtered.vcf.df.Q200.AF90[ c(!filtered.vcf.df.Q200.AF90$SNP_ID 
                                                           %in% 
                                                             SNPs.in.SG200$SNP_ID), ]  # from 45 to 43
-
 # count SNP freq.
 SNP.Num.Q200.AF90.NoSG200AF40 <- filtered.vcf.df.Q200.AF90 %>% 
   group_by(SNP_ID) %>% 
@@ -195,7 +176,7 @@ write.table(x = shared.SNPs.Q200.AF90, file = paste0(dir.2save.tables, "Shared.S
 # count SNP per sample after this filtering
 SNP.per.Sample.4 <- filtered.vcf.df.Q200.AF90 %>% group_by(Sample) %>% summarise(Num.SNP_NoSG200.Q200.AF90 = n())
 
-SNP.per.Sample <- fread(paste0(opt$workingDir, "analysis/SNP_Inference/bcftools/Tables/SNP_Number_Per_Sample.Q200.csv"))
+SNP.per.Sample <- fread("SNPCalling/Tables/SNP_Number_Per_Sample.Q200.csv")
 # Concatenate SNP.per.Sample.4 in SNP.per.Sample
 SNP.per.Sample <- SNP.per.Sample %>% left_join(select(SNP.per.Sample.4, Sample, Num.SNP_NoSG200.Q200.AF90), by = c("Sample" = "Sample"))
 # change NA by 0

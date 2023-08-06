@@ -76,7 +76,7 @@ This script needs a sample sheet file in `csv` format where the ID of each sampl
 
 Execute `02_Mapping.py` script
 ```
-python3 01_Mapping.py -c ../USMA_EE_Colonies_SampleSheet.csv
+python3 02_Mapping.py -c ../USMA_EE_Colonies_SampleSheet.csv
 
 ```
 
