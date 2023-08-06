@@ -172,11 +172,12 @@ sh shFiles/2021EE01_Check_SNPs_AF.sh
 The output of this step are `txt` files with the counting of each nucleotide aligned at this position.
  - These files are in: `SNPCalling/Tables/Check_SNPs_AF`
  
-Now, we filtered the SNPs with the next criteria:
+<b>Now, we filtered the SNPs with the next criteria:</b>
  - Keep those SNPs where the alternative allele is supported by at least 90% of the reads aligned to that coordinate.
  - Remove those SNPs that in strain SG200, at least 40% of the aligned reads contained the identified alternative allele at that position.
  
-For this task, we used the next custom R script: `SNP_Processing_and_Filtering.Step2.R`
+For this task, we used the next custom R script: `SNP_Processing_and_Filtering.Step2.R`<br>
+<br>
  This script requires the next files produced in `SNP_Processing_and_Filtering.Step1.R` as input:
    - `Shared.SNP.NoSG200.Q200.csv`: matrix of shared SNPs in colonies among lines
    - `Filtered.Variants.Q200.csv`: data set wtih SNPs 
@@ -193,11 +194,13 @@ The outputs of this script are:
   - `Shared.SNP.NoSG200.Q200.AF90.csv`
   - `SNP_Number_Per_Sample.Q200.AF90.csv`
   - `Matriz.Q200.AF90.Raw.csv`
-  - `Matriz.Q200.AF90.Percentage.csv`
+  - `Matriz.Q200.AF90.Percentage.csv`<br>
   <br>
  And the next plots located in: `~/Umaydis_experimental_Evolution/03_SNP_Calling/SNPCalling/Plots/`
   - `Matrix.Q200.AF90.RAW.svg`
   - `Matrix.Q200.AF90.PER.svg`
+  <br>
+  <br>
  
  <b> The final list of SNPs is in `Shared.SNP.NoSG200.Q200.AF90.csv` </b>
  
