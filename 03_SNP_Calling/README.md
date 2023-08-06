@@ -69,6 +69,8 @@ This script needs a sample sheet file in `csv` format where the ID of each sampl
 
 Execute `03_VariantCalling.py` script
 ```
+# verify that you are in the directory: ~/Umaydis_experimental_Evolution/03_VariantCalling.py
+
 python3 03_VariantCalling.py -c ../USMA_EE_Colonies_SampleSheet.csv
 
 ```
@@ -88,7 +90,7 @@ sh shFiles/2021EE01_VariantCalling.sh
 
 ```
 
-The main output of this stage are individual VCF for each analyzed sample. Also mpileups files were produced.
+The main output of this stage are individual `vcf` files for each analyzed sample. Also `mpileups` files were produced.
 
  - The `vcf` files are in `vcfFiles/` compressed as `.vcf.gz` files
  - The `pileup` files are in `mpileupFiles/` compressed as `.pileup.gz` files
@@ -102,19 +104,20 @@ The main output of this stage are individual VCF for each analyzed sample. Also 
  
 To do these three steps we call the next R script: `SNP_Processing_and_Filtering.Step1.R`
 
-Execute `SNP_Processing_and_Filtering.Step1.R` script
- - This script requires the file: `Functions_Filtering_SNPs.R`, which is located in `~/03_SNP_Calling/`
+Execute `SNP_Processing_and_Filtering.Step1.R` script <br>
+ - This script requires the file: `Functions_Filtering_SNPs.R`, which is located in `~/Umaydis_experimental_Evolution/03_SNP_Calling/`
 
 ```
+# Verify that you are in the directory: ~/Umaydis_experimental_Evolution/03_SNP_Calling/
 
 Rscript SNP_Processing_and_Filtering.Step1.R
 
 ```
  
 After the execution of this script, the ouptus (tables & plots) were writted in:
- - `~/Umaydis_experimental_Evolution/03_SNP_Calling/SNPCalling`
-     `|-Plots/`
-     `|-Tables/`
+ - `~/Umaydis_experimental_Evolution/03_SNP_Calling/SNPCalling`<br>
+     `|-Plots/`<br>
+     `|-Tables/`<br>
 
 ### 03.3.- Filter SNPs by Depth Coverage in each sample
 
@@ -191,6 +194,7 @@ The outputs of this script are:
   - `SNP_Number_Per_Sample.Q200.AF90.csv`
   - `Matriz.Q200.AF90.Raw.csv`
   - `Matriz.Q200.AF90.Percentage.csv`
+  <br>
  And the next plots located in: `~/Umaydis_experimental_Evolution/03_SNP_Calling/SNPCalling/Plots/`
   - `Matrix.Q200.AF90.RAW.svg`
   - `Matrix.Q200.AF90.PER.svg`
