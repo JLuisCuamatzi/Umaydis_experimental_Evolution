@@ -190,13 +190,12 @@ Rscript SNP_Processing_and_Filtering.Step2.R
 ```
 
 The outputs of this script are:
- The next tables located in `~/Umaydis_experimental_Evolution/03_SNP_Calling/SNPCalling/Tables/`
+ - The next tables located in `~/Umaydis_experimental_Evolution/03_SNP_Calling/SNPCalling/Tables/`
   - `Shared.SNP.NoSG200.Q200.AF90.csv`
   - `SNP_Number_Per_Sample.Q200.AF90.csv`
   - `Matriz.Q200.AF90.Raw.csv`
   - `Matriz.Q200.AF90.Percentage.csv`<br>
-  <br>
- And the next plots located in: `~/Umaydis_experimental_Evolution/03_SNP_Calling/SNPCalling/Plots/`
+ - And the next plots located in: `~/Umaydis_experimental_Evolution/03_SNP_Calling/SNPCalling/Plots/`
   - `Matrix.Q200.AF90.RAW.svg`
   - `Matrix.Q200.AF90.PER.svg`
   <br>
