@@ -26,7 +26,8 @@ parser.add_argument("-o", "--output_file", help="Name for the output file (it sh
 args = parser.parse_args() 
 
 # Read file with SNPs
-snps_data = pd.read_csv(args.snps_file)
+snps_data = pd.read_csv(args.snps_file) #
+#snps_data = pd.read_csv("SNPCalling/Tables/Shared.SNP.NoSG200.Q200.AF90.csv")
 new_column_names = {'CHROM': 'Chromosome', 'POS': 'Position', 'REF': 'Reference', 'ALT':'Alternative'}
 snps_data.rename(columns=new_column_names, inplace=True)
 
@@ -34,6 +35,7 @@ snps_data_1 = snps_data.iloc[:, 0:2]
 
 
 # Read U. maydis gene data base
+# usma_genes = pd.read_csv("../USMA_521_GeneProteines_DB.csv")
 usma_genes = pd.read_csv(args.genes_database)
 usma_genes_1 = pd.concat([usma_genes.iloc[:, 0:5], usma_genes.iloc[:, 8:9]], axis=1)
 
@@ -66,7 +68,7 @@ for index, row in snps_data_1.iterrows():
 result = pd.DataFrame(result_list)
 
 # Insert the new columns after 'SNP_ID'
-result = pd.concat([snps_data.iloc[:, 1:5], result.iloc[:,0:6], snps_data.iloc[:, 5:23]], axis = 1)
+result = pd.concat([snps_data.iloc[:, 0:5], result.iloc[:,2:6], snps_data.iloc[:, 5:23]], axis = 1)
 
 # Export "result" as csv
-result.to_csv(args.output_file, index=False)  
+result.to_csv(args.output_file, index=False)
