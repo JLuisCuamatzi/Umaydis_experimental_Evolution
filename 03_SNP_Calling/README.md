@@ -201,7 +201,17 @@ The outputs of this script are:
   <br>
   <br>
  
- <b> The final list of SNPs is in `Shared.SNP.NoSG200.Q200.AF90.csv` </b>
+  
+ To identify if the SNPs are in a ORF or if they are intergenics, we used the next python script: `SNP_Gene_Identifying.py`
+ 
+ ```
+ cd ~/Umaydis_experimental_Evolution/tree/main/03_SNP_Calling/
+ 
+ python3 SNP_Gene_Identifying.py -s SNPCalling/Tables/Shared.SNP.NoSG200.Q200.AF90.csv -g ../USMA_521_GeneProteines_DB.csv -o Umaydis_EE_Annotated_SNPs.csv
+ 
+ ```
+ 
+ <b> The final list of SNPs is in `Umaydis_EE_Annotated_SNPs.csv` </b>
  
  
  
