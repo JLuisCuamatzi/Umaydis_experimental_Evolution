@@ -1,4 +1,4 @@
-## 01.- Cleaning
+## 01.- Cleaning of genomes from sequenced colonies
 
 The cleaning of raw `fastq` files was done with [<b>fastp/0.20.0</b>](https://academic.oup.com/bioinformatics/article/34/17/i884/5093234) using the next code:
 
@@ -54,3 +54,29 @@ You can run these `.sh` files with the next command:
 sh shFiles/2021EE01_Cleaning.sh
 
 ```
+
+## Cleaning of genomes from sequenced pools
+
+We sequenced pools of Line C along the experimental evolution
+
+The genomes sequenced came from the next generations: 20, 30, 50, 70, 100, 140 and 200.
+
+These `fastq` were cleaned with the same pipeline
+
+We used the next python scripts: `01_Cleaning.py` to generate `sh` files to to process these fastqs
+ - For this case, we used the next sample sheet: `USMA_EE_Pools_SampleSheet.csv`
+
+<b>Cleaning</b>
+
+```
+python3 01_Cleaning.py -c ../USMA_EE_Pools_SampleSheet.csv
+
+# the sh files are in shFiles/
+
+# to execute the files you can do:
+
+sh shFiles/2021EE30_Cleaning.sh   # example for 2021EE30
+
+```
+
+

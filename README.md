@@ -1,14 +1,14 @@
-# <i>Ustilago maydis</i> Experimental_Evolution
+# Experimental evolution of <i>Ustilago maydis</i> SG200 under oxidative stress
 
 [Still under construction]
 
-## Bioinformatics analysis
+## Bioinformatic analysis of sequenced genomes in the experimental evolution
 
-Pipeline for cleaning, mapping and coverage plotting, and SNP calling from the genomes sequenced
+<b>Pipeline to process the `fastq` files:</b>
 
 ### Cleaning
 
-See `01_Cleaning` directory 
+See `01_Cleaning` directory to 
 
 ### Mapping and coverage plotting
 
@@ -17,3 +17,13 @@ See `02_MappingAndCoveragePlotting`
 ### SNP Calling
 
 See `03_SNP_Calling` directory
+
+### Analysis of sequenced pools
+
+See `04_Pools_analysis`
+
+### Analysis of chromosomal duplications in <i>U. maydis</i> isolates
+
+See `05_Duplications_in_Umaydis_isolates`
+
+## Analysis of data 

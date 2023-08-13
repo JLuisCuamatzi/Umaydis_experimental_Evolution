@@ -148,6 +148,31 @@ Finally, the ratio between normalized coverage in each sample against reference 
 
 
 
+## Mapping of genomes from sequenced pools
+
+The`fastq` of the pools were aligned with the same pipeline
+
+We used the next python scripts: `02_Mapping.py` to generate `sh` files to to process these fastqs
+ - For this case, we used the next sample sheet: `USMA_EE_Pools_SampleSheet.csv`
+
+<b>Cleaning and plotting normalized coverage</b>
+
+```
+# To map the reads
+
+python3 02_Mapping.py -c ../USMA_EE_Pools_SampleSheet.csv
+
+# To calculate and plot the normalized coverage
+
+python3 02.1_NormalizedCoverage_and_Plotting.py -c ../USMA_EE_Pools_SampleSheet.csv
+
+# the sh files from both python scripts are in `shFiles/`, and can be executed with:
+
+sh shFiles/2021EE30_Mapping.sh              # example for 2021EE30
+sh shFiles/2021EE30_NormCovAndPlotting.sh   # example for 2021EE30
+
+```
+
 
 
 
