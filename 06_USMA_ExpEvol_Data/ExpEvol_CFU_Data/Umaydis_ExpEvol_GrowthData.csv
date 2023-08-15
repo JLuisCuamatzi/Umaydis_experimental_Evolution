@@ -1,0 +1,388 @@
+Condition,TreatmentNum,H2O2,CFU,cells_mL,Line
+Control,Treatment 01,w/o ROS 0 mM,2120000,18666666.67,D
+Control,Treatment 01,w/o ROS 0 mM,1910000,2.80E+07,E
+Control,Treatment 01,w/o ROS 0 mM,1870000,2.40E+07,F
+Control,Treatment 01,w/o ROS 5 mM,2.00E+05,1.20E+07,D
+Control,Treatment 01,w/o ROS 5 mM,290000,1.10E+07,E
+Control,Treatment 01,w/o ROS 5 mM,250000,1.30E+07,F
+Control,Treatment 01,w/o ROS 10 mM,30000,7.00E+05,D
+Control,Treatment 01,w/o ROS 10 mM,50000,8.00E+05,E
+Control,Treatment 01,w/o ROS 10 mM,50000,9.00E+05,F
+H2O2,Treatment 01,0 mM,2150000,3.30E+07,A
+H2O2,Treatment 01,0 mM,1810000,2.50E+07,B
+H2O2,Treatment 01,0 mM,2030000,3.70E+07,C
+H2O2,Treatment 01,5 mM,650000,1.80E+07,A
+H2O2,Treatment 01,5 mM,6.00E+05,17333333.33,B
+H2O2,Treatment 01,5 mM,670000,13333333.33,C
+H2O2,Treatment 01,10 mM,140000,9.00E+05,A
+H2O2,Treatment 01,10 mM,70000,8.00E+05,B
+H2O2,Treatment 01,10 mM,90000,6.00E+05,C
+Control,Treatment 02,w/o ROS 0 mM,1730000,2.00E+07,D
+Control,Treatment 02,w/o ROS 0 mM,1850000,21333333.33,E
+Control,Treatment 02,w/o ROS 0 mM,1910000,16666666.67,F
+Control,Treatment 02,w/o ROS 5 mM,350000,1.10E+07,D
+Control,Treatment 02,w/o ROS 5 mM,230000,1.00E+07,E
+Control,Treatment 02,w/o ROS 5 mM,340000,1.40E+07,F
+Control,Treatment 02,w/o ROS 10 mM,30000,6.00E+05,D
+Control,Treatment 02,w/o ROS 10 mM,80000,5.00E+05,E
+Control,Treatment 02,w/o ROS 10 mM,40000,1100000,F
+H2O2,Treatment 02,0 mM,1870000,3.00E+07,A
+H2O2,Treatment 02,0 mM,2140000,2.30E+07,B
+H2O2,Treatment 02,0 mM,1750000,2.50E+07,C
+H2O2,Treatment 02,5 mM,780000,10666666.67,A
+H2O2,Treatment 02,5 mM,840000,17333333.33,B
+H2O2,Treatment 02,5 mM,810000,1.60E+07,C
+H2O2,Treatment 02,10 mM,60000,1400000,A
+H2O2,Treatment 02,10 mM,140000,1900000,B
+H2O2,Treatment 02,10 mM,130000,8.00E+05,C
+Control,Treatment 03,w/o ROS 0 mM,1800000,19333333.33,D
+Control,Treatment 03,w/o ROS 0 mM,2040000,1.70E+07,E
+Control,Treatment 03,w/o ROS 0 mM,1960000,1.30E+07,F
+Control,Treatment 03,w/o ROS 5 mM,380000,1.20E+07,D
+Control,Treatment 03,w/o ROS 5 mM,440000,1.40E+07,E
+Control,Treatment 03,w/o ROS 5 mM,480000,1.60E+07,F
+Control,Treatment 03,w/o ROS 10 mM,0,4.00E+06,D
+Control,Treatment 03,w/o ROS 10 mM,40000,4.00E+06,E
+Control,Treatment 03,w/o ROS 10 mM,80000,7.00E+06,F
+H2O2,Treatment 03,0 mM,1920000,3.20E+07,A
+H2O2,Treatment 03,0 mM,2360000,2.40E+07,B
+H2O2,Treatment 03,0 mM,1920000,2.90E+07,C
+H2O2,Treatment 03,8 mM,360000,6.00E+06,A
+H2O2,Treatment 03,8 mM,120000,5333333.333,B
+H2O2,Treatment 03,8 mM,3.00E+05,5333333.333,C
+H2O2,Treatment 03,13 mM,60000,3600000,A
+H2O2,Treatment 03,13 mM,40000,4.00E+05,B
+H2O2,Treatment 03,13 mM,60000,5.00E+05,C
+Control,Treatment 04,w/o ROS 0 mM,1870000,1.80E+07,D
+Control,Treatment 04,w/o ROS 0 mM,1950000,14666666.67,E
+Control,Treatment 04,w/o ROS 0 mM,1920000,2.20E+07,F
+Control,Treatment 04,w/o ROS 5 mM,180000,1.50E+07,D
+Control,Treatment 04,w/o ROS 5 mM,30000,1.40E+07,E
+Control,Treatment 04,w/o ROS 5 mM,10000,1.10E+07,F
+Control,Treatment 04,w/o ROS 10 mM,0,7.00E+05,D
+Control,Treatment 04,w/o ROS 10 mM,30000,9.00E+05,E
+Control,Treatment 04,w/o ROS 10 mM,20000,3.00E+05,F
+H2O2,Treatment 04,0 mM,1760000,2.00E+07,A
+H2O2,Treatment 04,0 mM,2310000,3.10E+07,B
+H2O2,Treatment 04,0 mM,1830000,3.70E+07,C
+H2O2,Treatment 04,8 mM,360000,1.50E+07,A
+H2O2,Treatment 04,8 mM,180000,15333333.33,B
+H2O2,Treatment 04,8 mM,420000,1.20E+07,C
+H2O2,Treatment 04,13 mM,160000,1100000,A
+H2O2,Treatment 04,13 mM,30000,1100000,B
+H2O2,Treatment 04,13 mM,60000,1400000,C
+Control,Treatment 05,w/o ROS 0 mM,1830000,2.00E+07,D
+Control,Treatment 05,w/o ROS 0 mM,1900000,1.80E+07,E
+Control,Treatment 05,w/o ROS 0 mM,2040000,2.10E+07,F
+Control,Treatment 05,w/o ROS 5 mM,3.00E+05,1.70E+07,D
+Control,Treatment 05,w/o ROS 5 mM,660000,1.90E+07,E
+Control,Treatment 05,w/o ROS 5 mM,260000,8.00E+06,F
+Control,Treatment 05,w/o ROS 10 mM,60000,310000,D
+Control,Treatment 05,w/o ROS 10 mM,50000,3.00E+05,E
+Control,Treatment 05,w/o ROS 10 mM,50000,380000,F
+H2O2,Treatment 05,0 mM,2160000,2.20E+07,A
+H2O2,Treatment 05,0 mM,2290000,2.70E+07,B
+H2O2,Treatment 05,0 mM,1890000,2.50E+07,C
+H2O2,Treatment 05,11 mM,9.00E+05,16666666.67,A
+H2O2,Treatment 05,11 mM,630000,12333333.33,B
+H2O2,Treatment 05,11 mM,720000,1.50E+07,C
+H2O2,Treatment 05,16 mM,180000,4700000,A
+H2O2,Treatment 05,16 mM,1.00E+05,3200000,B
+H2O2,Treatment 05,16 mM,220000,2700000,C
+Control,Treatment 06,w/o ROS 0 mM,1830000,2.10E+07,D
+Control,Treatment 06,w/o ROS 0 mM,1490000,19666666.67,E
+Control,Treatment 06,w/o ROS 0 mM,1690000,1.80E+07,F
+Control,Treatment 06,w/o ROS 5 mM,290000,9.00E+06,D
+Control,Treatment 06,w/o ROS 5 mM,450000,1.10E+07,E
+Control,Treatment 06,w/o ROS 5 mM,310000,1.00E+07,F
+Control,Treatment 06,w/o ROS 10 mM,30000,30000,D
+Control,Treatment 06,w/o ROS 10 mM,30000,60000,E
+Control,Treatment 06,w/o ROS 10 mM,60000,60000,F
+H2O2,Treatment 06,0 mM,1940000,3.30E+07,A
+H2O2,Treatment 06,0 mM,1740000,2.40E+07,B
+H2O2,Treatment 06,0 mM,1560000,2.70E+07,C
+H2O2,Treatment 06,11 mM,330000,14333333.33,A
+H2O2,Treatment 06,11 mM,250000,20666666.67,B
+H2O2,Treatment 06,11 mM,430000,16333333.33,C
+H2O2,Treatment 06,16 mM,3.00E+05,3300000,A
+H2O2,Treatment 06,16 mM,70000,3600000,B
+H2O2,Treatment 06,16 mM,420000,4.00E+06,C
+Control,Treatment 07,w/o ROS 0 mM,1530000,19666666.67,D
+Control,Treatment 07,w/o ROS 0 mM,1690000,17333333.33,E
+Control,Treatment 07,w/o ROS 0 mM,1880000,11333333.33,F
+Control,Treatment 07,w/o ROS 5 mM,160000,1.30E+07,D
+Control,Treatment 07,w/o ROS 5 mM,110000,8.00E+06,E
+Control,Treatment 07,w/o ROS 5 mM,320000,1.00E+07,F
+Control,Treatment 07,w/o ROS 10 mM,90000,5.00E+05,D
+Control,Treatment 07,w/o ROS 10 mM,60000,8.00E+05,E
+Control,Treatment 07,w/o ROS 10 mM,50000,1.00E+06,F
+H2O2,Treatment 07,0 mM,2090000,4.70E+07,A
+H2O2,Treatment 07,0 mM,2040000,5.20E+07,B
+H2O2,Treatment 07,0 mM,1850000,5.30E+07,C
+H2O2,Treatment 07,14 mM,430000,20333333.33,A
+H2O2,Treatment 07,14 mM,170000,18666666.67,B
+H2O2,Treatment 07,14 mM,640000,23666666.67,C
+H2O2,Treatment 07,19 mM,90000,5800000,A
+H2O2,Treatment 07,19 mM,1.00E+05,6300000,B
+H2O2,Treatment 07,19 mM,30000,6900000,C
+Control,Treatment 08,w/o ROS 0 mM,2080000,16666666.67,D
+Control,Treatment 08,w/o ROS 0 mM,1710000,1.50E+07,E
+Control,Treatment 08,w/o ROS 0 mM,1860000,18666666.67,F
+Control,Treatment 08,w/o ROS 5 mM,230000,1.30E+07,D
+Control,Treatment 08,w/o ROS 5 mM,290000,1.40E+07,E
+Control,Treatment 08,w/o ROS 5 mM,150000,3.20E+07,F
+Control,Treatment 08,w/o ROS 10 mM,30000,3.00E+05,D
+Control,Treatment 08,w/o ROS 10 mM,60000,7.00E+05,E
+Control,Treatment 08,w/o ROS 10 mM,50000,4.00E+05,F
+H2O2,Treatment 08,0 mM,1710000,5.10E+07,A
+H2O2,Treatment 08,0 mM,1720000,6.30E+07,B
+H2O2,Treatment 08,0 mM,1880000,5.00E+07,C
+H2O2,Treatment 08,14 mM,330000,2.40E+07,A
+H2O2,Treatment 08,14 mM,490000,27666666.67,B
+H2O2,Treatment 08,14 mM,390000,2.10E+07,C
+H2O2,Treatment 08,19 mM,70000,2.60E+07,A
+H2O2,Treatment 08,19 mM,110000,1.70E+07,B
+H2O2,Treatment 08,19 mM,160000,2.00E+07,C
+Control,Treatment 09,w/o ROS 0 mM,1750000,24333333.33,D
+Control,Treatment 09,w/o ROS 0 mM,1790000,20666666.67,E
+Control,Treatment 09,w/o ROS 0 mM,1850000,19666666.67,F
+Control,Treatment 09,w/o ROS 5 mM,110000,1.60E+07,D
+Control,Treatment 09,w/o ROS 5 mM,290000,1.40E+07,E
+Control,Treatment 09,w/o ROS 5 mM,340000,1.90E+07,F
+Control,Treatment 09,w/o ROS 10 mM,110000,4.00E+05,D
+Control,Treatment 09,w/o ROS 10 mM,170000,7.00E+05,E
+Control,Treatment 09,w/o ROS 10 mM,130000,9.00E+05,F
+H2O2,Treatment 09,0 mM,1890000,7.10E+07,A
+H2O2,Treatment 09,0 mM,1860000,5.30E+07,B
+H2O2,Treatment 09,0 mM,1490000,4.40E+07,C
+H2O2,Treatment 09,17 mM,890000,2.30E+07,A
+H2O2,Treatment 09,17 mM,9.00E+05,31333333.33,B
+H2O2,Treatment 09,17 mM,750000,3.00E+07,C
+H2O2,Treatment 09,22 mM,390000,2.20E+07,A
+H2O2,Treatment 09,22 mM,440000,2.90E+07,B
+H2O2,Treatment 09,22 mM,650000,2.30E+07,C
+Control,Treatment 10,w/o ROS 0 mM,1830000,37666666.67,D
+Control,Treatment 10,w/o ROS 0 mM,1670000,33666666.67,E
+Control,Treatment 10,w/o ROS 0 mM,2090000,19333333.33,F
+Control,Treatment 10,w/o ROS 5 mM,250000,1.30E+07,D
+Control,Treatment 10,w/o ROS 5 mM,140000,1.90E+07,E
+Control,Treatment 10,w/o ROS 5 mM,60000,1.80E+07,F
+Control,Treatment 10,w/o ROS 10 mM,140000,8.00E+06,D
+Control,Treatment 10,w/o ROS 10 mM,80000,8.00E+06,E
+Control,Treatment 10,w/o ROS 10 mM,30000,5.00E+06,F
+H2O2,Treatment 10,0 mM,1680000,5.30E+07,A
+H2O2,Treatment 10,0 mM,1340000,6.10E+07,B
+H2O2,Treatment 10,0 mM,2380000,5.70E+07,C
+H2O2,Treatment 10,17 mM,640000,23333333.33,A
+H2O2,Treatment 10,17 mM,860000,32666666.67,B
+H2O2,Treatment 10,17 mM,520000,28666666.67,C
+H2O2,Treatment 10,22 mM,330000,3.00E+07,A
+H2O2,Treatment 10,22 mM,280000,2.60E+07,B
+H2O2,Treatment 10,22 mM,310000,1.80E+07,C
+Control,Treatment 11,w/o ROS 0 mM,1830000,23666666.67,D
+Control,Treatment 11,w/o ROS 0 mM,1860000,23333333.33,E
+Control,Treatment 11,w/o ROS 0 mM,1940000,27666666.67,F
+Control,Treatment 11,w/o ROS 5 mM,190000,1.70E+07,D
+Control,Treatment 11,w/o ROS 5 mM,280000,1.30E+07,E
+Control,Treatment 11,w/o ROS 5 mM,150000,2.20E+07,F
+Control,Treatment 11,w/o ROS 10 mM,40000,9.00E+06,D
+Control,Treatment 11,w/o ROS 10 mM,60000,6.00E+06,E
+Control,Treatment 11,w/o ROS 10 mM,90000,7.00E+06,F
+H2O2,Treatment 11,0 mM,1880000,6.00E+07,A
+H2O2,Treatment 11,0 mM,1690000,4.20E+07,B
+H2O2,Treatment 11,0 mM,2180000,5.80E+07,C
+H2O2,Treatment 11,20 mM,960000,2.30E+07,A
+H2O2,Treatment 11,20 mM,920000,22666666.67,B
+H2O2,Treatment 11,20 mM,7.00E+05,2.60E+07,C
+H2O2,Treatment 11,30 mM,190000,2.80E+07,A
+H2O2,Treatment 11,30 mM,130000,1.80E+07,B
+H2O2,Treatment 11,30 mM,60000,2.00E+07,C
+Control,Treatment 12,w/o ROS 0 mM,1810000,31333333.33,D
+Control,Treatment 12,w/o ROS 0 mM,1720000,20666666.67,E
+Control,Treatment 12,w/o ROS 0 mM,1930000,23333333.33,F
+Control,Treatment 12,w/o ROS 5 mM,320000,2.10E+07,D
+Control,Treatment 12,w/o ROS 5 mM,450000,3.50E+07,E
+Control,Treatment 12,w/o ROS 5 mM,170000,8.00E+06,F
+Control,Treatment 12,w/o ROS 10 mM,30000,1.20E+07,D
+Control,Treatment 12,w/o ROS 10 mM,90000,1.50E+07,E
+Control,Treatment 12,w/o ROS 10 mM,60000,1.60E+07,F
+H2O2,Treatment 12,0 mM,1850000,7.60E+07,A
+H2O2,Treatment 12,0 mM,1730000,5.90E+07,B
+H2O2,Treatment 12,0 mM,1520000,5.70E+07,C
+H2O2,Treatment 12,20 mM,730000,3.30E+07,A
+H2O2,Treatment 12,20 mM,620000,3.80E+07,B
+H2O2,Treatment 12,20 mM,930000,4.40E+07,C
+H2O2,Treatment 12,30 mM,220000,2.30E+07,A
+H2O2,Treatment 12,30 mM,2.00E+05,3.10E+07,B
+H2O2,Treatment 12,30 mM,3.00E+05,3.00E+07,C
+Control,Treatment 13,w/o ROS 0 mM,1930000,3.60E+07,D
+Control,Treatment 13,w/o ROS 0 mM,1900000,34666666.67,E
+Control,Treatment 13,w/o ROS 0 mM,1780000,3.20E+07,F
+Control,Treatment 13,w/o ROS 5 mM,110000,3.00E+07,D
+Control,Treatment 13,w/o ROS 5 mM,60000,2.60E+07,E
+Control,Treatment 13,w/o ROS 5 mM,80000,1.80E+07,F
+Control,Treatment 13,w/o ROS 10 mM,30000,10600000,D
+Control,Treatment 13,w/o ROS 10 mM,40000,7900000,E
+Control,Treatment 13,w/o ROS 10 mM,20000,9800000,F
+H2O2,Treatment 13,0 mM,1850000,6.60E+07,A
+H2O2,Treatment 13,0 mM,1690000,7.20E+07,B
+H2O2,Treatment 13,0 mM,1740000,6.50E+07,C
+H2O2,Treatment 13,30 mM,2.00E+05,5.00E+07,A
+H2O2,Treatment 13,30 mM,260000,5.30E+07,B
+H2O2,Treatment 13,30 mM,230000,4.70E+07,C
+H2O2,Treatment 13,40 mM,30000,8700000,A
+H2O2,Treatment 13,40 mM,40000,14100000,B
+H2O2,Treatment 13,40 mM,10000,13600000,C
+Control,Treatment 14,w/o ROS 0 mM,2120000,3.30E+07,D
+Control,Treatment 14,w/o ROS 0 mM,1960000,4.50E+07,E
+Control,Treatment 14,w/o ROS 0 mM,2320000,4.30E+07,F
+Control,Treatment 14,w/o ROS 5 mM,1670000,1.20E+07,D
+Control,Treatment 14,w/o ROS 5 mM,1690000,2.00E+07,E
+Control,Treatment 14,w/o ROS 5 mM,2970000,1.00E+07,F
+Control,Treatment 14,w/o ROS 10 mM,140000,4.00E+06,D
+Control,Treatment 14,w/o ROS 10 mM,50000,5.00E+06,E
+Control,Treatment 14,w/o ROS 10 mM,80000,7.00E+06,F
+H2O2,Treatment 14,0 mM,2040000,8.40E+07,A
+H2O2,Treatment 14,0 mM,1760000,9.50E+07,B
+H2O2,Treatment 14,0 mM,1720000,7.00E+07,C
+H2O2,Treatment 14,30 mM,3.00E+05,6.60E+07,A
+H2O2,Treatment 14,30 mM,310000,5.30E+07,B
+H2O2,Treatment 14,30 mM,290000,5.50E+07,C
+H2O2,Treatment 14,40 mM,31000,6.10E+07,A
+H2O2,Treatment 14,40 mM,26000,4.40E+07,B
+H2O2,Treatment 14,40 mM,25000,2.80E+07,C
+Control,Treatment 15,w/o ROS 0 mM,1690000,4.20E+07,D
+Control,Treatment 15,w/o ROS 0 mM,1533000,5.60E+07,E
+Control,Treatment 15,w/o ROS 0 mM,1800000,4.80E+07,F
+Control,Treatment 15,w/o ROS 5 mM,250000,1.30E+07,D
+Control,Treatment 15,w/o ROS 5 mM,160000,2.40E+07,E
+Control,Treatment 15,w/o ROS 5 mM,140000,1.80E+07,F
+Control,Treatment 15,w/o ROS 10 mM,10000,8.00E+06,D
+Control,Treatment 15,w/o ROS 10 mM,30000,1.40E+07,E
+Control,Treatment 15,w/o ROS 10 mM,80000,5.00E+06,F
+H2O2,Treatment 15,0 mM,1440000,7.00E+07,A
+H2O2,Treatment 15,0 mM,1840000,6.30E+07,B
+H2O2,Treatment 15,0 mM,1660000,7.30E+07,C
+H2O2,Treatment 15,40 mM,3.00E+05,5.00E+07,A
+H2O2,Treatment 15,40 mM,310000,4.70E+07,B
+H2O2,Treatment 15,40 mM,290000,3.90E+07,C
+H2O2,Treatment 15,50 mM,146000,2.90E+07,A
+H2O2,Treatment 15,50 mM,145000,3.20E+07,B
+H2O2,Treatment 15,50 mM,135000,3.90E+07,C
+Control,Treatment 16,w/o ROS 0 mM,1800000,4.30E+07,D
+Control,Treatment 16,w/o ROS 0 mM,1860000,3.50E+07,E
+Control,Treatment 16,w/o ROS 0 mM,1730000,4.60E+07,F
+Control,Treatment 16,w/o ROS 5 mM,260000,3.40E+07,D
+Control,Treatment 16,w/o ROS 5 mM,120000,1.30E+07,E
+Control,Treatment 16,w/o ROS 5 mM,90000,1.00E+07,F
+Control,Treatment 16,w/o ROS 10 mM,50000,4.00E+06,D
+Control,Treatment 16,w/o ROS 10 mM,40000,5.00E+06,E
+Control,Treatment 16,w/o ROS 10 mM,50000,5.00E+06,F
+H2O2,Treatment 16,0 mM,1990000,5.60E+07,A
+H2O2,Treatment 16,0 mM,2110000,9.40E+07,B
+H2O2,Treatment 16,0 mM,2070000,8.10E+07,C
+H2O2,Treatment 16,40 mM,570000,6.00E+07,A
+H2O2,Treatment 16,40 mM,640000,5.00E+07,B
+H2O2,Treatment 16,40 mM,530000,6.70E+07,C
+H2O2,Treatment 16,50 mM,190000,4.70E+07,A
+H2O2,Treatment 16,50 mM,280000,3.60E+07,B
+H2O2,Treatment 16,50 mM,240000,4.70E+07,C
+Control,Treatment 17,w/o ROS 0 mM,1940000,5.20E+07,D
+Control,Treatment 17,w/o ROS 0 mM,2040000,5.90E+07,E
+Control,Treatment 17,w/o ROS 0 mM,1670000,6.20E+07,F
+Control,Treatment 17,w/o ROS 5 mM,150000,1.20E+07,D
+Control,Treatment 17,w/o ROS 5 mM,2.00E+05,9.00E+06,E
+Control,Treatment 17,w/o ROS 5 mM,250000,1.10E+07,F
+Control,Treatment 17,w/o ROS 10 mM,130000,3.00E+06,D
+Control,Treatment 17,w/o ROS 10 mM,80000,4.00E+06,E
+Control,Treatment 17,w/o ROS 10 mM,70000,7.00E+06,F
+H2O2,Treatment 17,0 mM,2150000,1.08E+08,A
+H2O2,Treatment 17,0 mM,2060000,9.00E+07,B
+H2O2,Treatment 17,0 mM,2240000,8.80E+07,C
+H2O2,Treatment 17,50 mM,460000,7.70E+07,A
+H2O2,Treatment 17,50 mM,230000,6.80E+07,B
+H2O2,Treatment 17,50 mM,240000,5.50E+07,C
+H2O2,Treatment 17,60 mM,280000,52500000,A
+H2O2,Treatment 17,60 mM,250000,5.00E+06,B
+H2O2,Treatment 17,60 mM,40000,1300000,C
+Control,Treatment 18,w/o ROS 0 mM,1860000,6.80E+07,D
+Control,Treatment 18,w/o ROS 0 mM,1810000,7.70E+07,E
+Control,Treatment 18,w/o ROS 0 mM,1780000,7.40E+07,F
+Control,Treatment 18,w/o ROS 5 mM,260000,2.40E+07,D
+Control,Treatment 18,w/o ROS 5 mM,190000,1.10E+07,E
+Control,Treatment 18,w/o ROS 5 mM,330000,1.00E+07,F
+Control,Treatment 18,w/o ROS 10 mM,30000,6.00E+06,D
+Control,Treatment 18,w/o ROS 10 mM,130000,6.00E+06,E
+Control,Treatment 18,w/o ROS 10 mM,40000,1.30E+07,F
+H2O2,Treatment 18,0 mM,2290000,1.48E+08,A
+H2O2,Treatment 18,0 mM,1760000,9.80E+07,B
+H2O2,Treatment 18,0 mM,2330000,1.13E+08,C
+H2O2,Treatment 18,50 mM,190000,7.60E+07,A
+H2O2,Treatment 18,50 mM,130000,6.70E+07,B
+H2O2,Treatment 18,50 mM,30000,1400000,C
+H2O2,Treatment 18,60 mM,70000,4.20E+07,A
+H2O2,Treatment 18,60 mM,20000,3.50E+07,B
+H2O2,Treatment 18,60 mM,10000,3.00E+05,C
+Control,Treatment 19,w/o ROS 0 mM,1700000,5.20E+07,D
+Control,Treatment 19,w/o ROS 0 mM,1810000,4.40E+07,E
+Control,Treatment 19,w/o ROS 0 mM,1930000,8.50E+07,F
+Control,Treatment 19,w/o ROS 5 mM,130000,2.40E+07,D
+Control,Treatment 19,w/o ROS 5 mM,120000,1.30E+07,E
+Control,Treatment 19,w/o ROS 5 mM,2.00E+05,1.70E+07,F
+Control,Treatment 19,w/o ROS 10 mM,50000,4.00E+06,D
+Control,Treatment 19,w/o ROS 10 mM,40000,3.00E+06,E
+Control,Treatment 19,w/o ROS 10 mM,50000,1.00E+06,F
+H2O2,Treatment 19,0 mM,2190000,8.10E+07,A
+H2O2,Treatment 19,0 mM,2310000,9.70E+07,B
+H2O2,Treatment 19,0 mM,2680000,8.50E+07,C
+H2O2,Treatment 19,60 mM,250000,4.60E+07,A
+H2O2,Treatment 19,60 mM,170000,4.40E+07,B
+H2O2,Treatment 19,60 mM,1.00E+05,2.50E+07,C
+H2O2,Treatment 19,70 mM,220000,3.10E+07,A
+H2O2,Treatment 19,70 mM,80000,6.00E+06,B
+H2O2,Treatment 19,70 mM,30000,1.40E+07,C
+Control,Treatment 20,w/o ROS 0 mM,1720000,6.70E+07,D
+Control,Treatment 20,w/o ROS 0 mM,1890000,5.90E+07,E
+Control,Treatment 20,w/o ROS 0 mM,1680000,6.20E+07,F
+Control,Treatment 20,w/o ROS 5 mM,180000,2.20E+07,D
+Control,Treatment 20,w/o ROS 5 mM,220000,1.90E+07,E
+Control,Treatment 20,w/o ROS 5 mM,250000,2.80E+07,F
+Control,Treatment 20,w/o ROS 10 mM,60000,6.00E+06,D
+Control,Treatment 20,w/o ROS 10 mM,80000,9.00E+06,E
+Control,Treatment 20,w/o ROS 10 mM,20000,1.10E+07,F
+Control,Treatment 20,w/o ROS 60 mM,0,0,D
+Control,Treatment 20,w/o ROS 60 mM,0,0,E
+Control,Treatment 20,w/o ROS 60 mM,0,0,F
+Control,Treatment 20,w/o ROS 70 mM,0,0,D
+Control,Treatment 20,w/o ROS 70 mM,0,0,E
+Control,Treatment 20,w/o ROS 70 mM,0,0,F
+H2O2,Treatment 20,0 mM,2450000,9.40E+07,A
+H2O2,Treatment 20,0 mM,2060000,1.06E+08,B
+H2O2,Treatment 20,0 mM,2130000,1.10E+08,C
+H2O2,Treatment 20,5 mM,1860000,85540000,A
+H2O2,Treatment 20,5 mM,1850000,96460000,B
+H2O2,Treatment 20,5 mM,1930000,100100000,C
+H2O2,Treatment 20,10 mM,1460000,77080000,A
+H2O2,Treatment 20,10 mM,1440000,76320000,B
+H2O2,Treatment 20,10 mM,1530000,75900000,C
+H2O2,Treatment 20,60 mM,360000,5.20E+07,A
+H2O2,Treatment 20,60 mM,280000,4.60E+07,B
+H2O2,Treatment 20,60 mM,110000,1.90E+07,C
+H2O2,Treatment 20,70 mM,290000,3.60E+07,A
+H2O2,Treatment 20,70 mM,160000,2.20E+07,B
+H2O2,Treatment 20,70 mM,90000,1.10E+07,C
+SG200,SG200,0 mM,2250000,4.30E+07,SG200
+SG200,SG200,0 mM,1790000,3.60E+07,SG200
+SG200,SG200,0 mM,2130000,3.20E+07,SG200
+SG200,SG200,5 mM,780000,1.30E+07,SG200
+SG200,SG200,5 mM,930000,2.60E+07,SG200
+SG200,SG200,5 mM,860000,1.90E+07,SG200
+SG200,SG200,10 mM,60000,1400000,SG200
+SG200,SG200,10 mM,90000,1300000,SG200
+SG200,SG200,10 mM,50000,2100000,SG200
+SG200,SG200,60 mM,0,0,SG200
+SG200,SG200,60 mM,0,0,SG200
+SG200,SG200,60 mM,0,0,SG200
+SG200,SG200,70 mM,0,0,SG200
+SG200,SG200,70 mM,0,0,SG200
+SG200,SG200,70 mM,0,0,SG200
