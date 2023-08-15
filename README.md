@@ -26,4 +26,9 @@ See `04_Pools_analysis`
 
 See `05_Duplications_in_Umaydis_isolates`
 
-## Analysis of data 
+## Analysis of data from experimental evolution, and phenotypic analysis of oexUMAG_11067 (strain that overexpress UMAG_11067 gene)
+
+See `06_USMA_ExpEvol_Data`
+
+
+
