@@ -1,6 +1,6 @@
 # Experimental evolution of <i>Ustilago maydis</i> SG200 under oxidative stress
 
-[Still under construction]
+Repository with scripts to reproduce the analysis conducted on: [insert link to paper here]
 
 ## Bioinformatic analysis of sequenced genomes in the experimental evolution
 
@@ -26,7 +26,7 @@ See `04_Pools_analysis`
 
 See `05_Duplications_in_Umaydis_isolates`
 
-## Analysis of data from experimental evolution, and phenotypic analysis of oexUMAG_11067 (strain that overexpress UMAG_11067 gene)
+## Analysis of data collected from experimental evolution, analysis of gene expression of UMAG_11067 and phenotypic analysis of oexUMAG_11067 (strain that overexpress UMAG_11067 gene)
 
 See `06_USMA_ExpEvol_Data`
 
