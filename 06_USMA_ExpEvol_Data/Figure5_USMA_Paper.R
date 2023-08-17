@@ -49,7 +49,7 @@ df.col.2.stats <- df.col.2 %>% group_by(Line) %>%  t_test(HaloSize_cm ~ Chr9Stat
 
 
 df.col.2.stats.2 <- df.col.2 %>% t_test(HaloSize_cm ~ Chr9.LA) %>% adjust_pvalue() %>% add_significance()
-
+df.col.2.stats.2
 my_comparisons <- list( c("1X", "2X"), c("1X", "3X"), c("2X", "3X") )
 
 df2plot <- df.col.2 %>% mutate(InhibitionArea = ((pi)*(HaloSize_cm/2)^2)) %>% 

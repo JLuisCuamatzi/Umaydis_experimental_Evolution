@@ -8,9 +8,12 @@ In the next stage of our pipeline, we did the following:
 <b>02.2.- Computing and Plotting Normalized Coverage </b>
  - We computed and plotted the normalized coverage of each genome in non-overlapping windows of 1 kb.
  
-b>02.3.- Computing the Ratio of Normalized Coverage </b>
+<b>02.3.- Computing the Ratio of Normalized Coverage </b>
  - We computed the ratio between normalized coverage in each sample against the initial strain (<i>U. maydis</i> SG200)
  
+<b>02.4.- Mapping genomes from sequenced pools and analysis of coverage</b>
+
+<b>02.5.- Analysis of coverage with a base-pair resolution at the breakpoint of chr 9 duplication</b>
 
 ### 02.1.- Mapping
 
@@ -148,9 +151,9 @@ Finally, the ratio between normalized coverage in each sample against reference 
 
 
 
-## Mapping of genomes from sequenced pools
+### 02.4.- Mapping genomes from sequenced pools and analysis of coverage
 
-The`fastq` of the pools were aligned with the same pipeline
+The `fastq` of the pools were aligned with the same pipeline
 
 We used the next python scripts: `02_Mapping.py` to generate `sh` files to to process these fastqs
  - For this case, we used the next sample sheet: `USMA_EE_Pools_SampleSheet.csv`
@@ -172,6 +175,32 @@ sh shFiles/2021EE30_Mapping.sh              # example for 2021EE30
 sh shFiles/2021EE30_NormCovAndPlotting.sh   # example for 2021EE30
 
 ```
+
+## 02.5.- Analysis of coverage with a base-pair resolution at the breakpoint of chr 9 duplication
+
+An analysis of normalized coverage at base-pair resolution (bpRes) was done to identify the breakpoint of aneuploidy in chromosome 9
+
+The normalized coverage at bpRes was computed from depth coverage files using the next python script: `ComputeMedianCoverage_bpResolution.py`
+ - The input for this script is a `.depth.gz` file. The input should be indicated with `-i`
+ - For computational efficiency, the analysis is just performed on a target chromosome. This should be indicated with `-c`
+ 
+
+```
+# Check in the terminal that the current directory is: ~/Umaydis_experimental_Evolution/02_MappingAndCoveragePlotting/
+
+# execute the python for all depth coverage files (located in: coverageFiles/)
+
+for files in coverageFiles/*.depth.gz; do python3 ComputeMedianCoverage_bpResolution.py -i $files -c USMA_521_v2; done
+
+
+```
+
+The output files are in: `normalizedCoverageTables/bpResolution/`
+
+The normalized coverage at bp Resolution was plotted with the next Rscript: `NormalizedCoverage_bpRes.R`
+
+Additionally, we plotted the genes flankig the breakpoint, and the GC percent in that region.
+
 
 
 
