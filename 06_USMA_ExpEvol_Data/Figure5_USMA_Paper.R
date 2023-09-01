@@ -64,10 +64,19 @@ df2plot$Line <- paste("Line ", df2plot$Line, sep = "")
 
 df2plot$Chr9.LA <- factor(df2plot$Chr9.LA, levels = c("1X", "2X", "3X"))
 
+# add dots to each bar
+df2plot.dots <- df.col.2 %>% mutate(InhibitionArea = ((pi)*(HaloSize_cm/2)^2),
+                                    X.Labs = rep(rep(c(1:5), each = 3), 3))
+
+df2plot.dots$Line <- paste("Line ", df2plot.dots$Line, sep = "")
+
+
 Figure.5A <- df2plot %>% arrange(Strain) %>% mutate(X.Labs = rep(seq(1,5,1), 3) ) %>% 
   ggplot() +
   geom_col(aes(x = X.Labs, y = HaloAreaMean, fill = Chr9.LA, color = Chr9.LA), 
            alpha = 0.75, linewidth = 0.15) +
+  geom_point(data = df2plot.dots, aes(x = X.Labs, y = InhibitionArea), 
+             size = 1, alpha = 0.5, color = "black")+
   facet_grid(~Line, scales = "free", space = "free", switch = "both") +
   geom_hline(yintercept = 0)+
   theme_classic() +

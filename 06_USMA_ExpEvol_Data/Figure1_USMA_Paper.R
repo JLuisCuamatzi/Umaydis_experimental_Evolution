@@ -13,12 +13,11 @@ for (lib in libraries) {
 
 rm(list = ls())
 
-getwd()
-# Read the csv with the data
-setwd("~/PaperToMBE/GitLab_Repository/06_USMA_ExpEvol_Data/ExpEvol_CFU_Data/")
+# Set as working directory, the directory in which this script is saved
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
-
-df <- fread("Umaydis_ExpEvol_GrowthData.csv")
+# Read data of CFU
+df <- fread("ExpEvol_CFU_Data/Umaydis_ExpEvol_GrowthData.csv")
 
 # keep only CFU
 df <- df[,-5]
@@ -71,11 +70,16 @@ df.Figure.1 <- df.Figure.1[H2O2 %in% c("5mM", "60mM")]
 
 df.Figure.1.Mean <- df.Figure.1 %>% 
   group_by(Condition, TreatmentNum, H2O2, Line) %>% 
-  summarise(CFU_Ratio_Mean = mean(CFU_Ratio)) %>% 
+  summarise(CFU_Ratio_Mean = mean(CFU_Ratio),
+            CFU_Ratip_DS = sd(CFU_Ratio)) %>% 
   ungroup()
 
-df.Figure.1.Mean
-df.Figure.1
+df.Figure.1 %>% 
+  group_by(Condition, TreatmentNum, H2O2, Line) %>% 
+  summarise(CFU_Ratio_Mean = mean(CFU_Ratio),
+            CFU_Ratip_DS = sd(CFU_Ratio)) %>% 
+  ungroup()
+
 
 df2plot.1 <- df.Figure.1.Mean %>% 
   select(Condition, H2O2, Line, CFU_Ratio_Mean)

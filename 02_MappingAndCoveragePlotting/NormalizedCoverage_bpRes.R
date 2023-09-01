@@ -44,7 +44,7 @@ plot.Chr9.GC <- ggplot() +
     axis.title.y = element_text(face = "bold", color = "black", size = 8),
     axis.text.y = element_text(size = 8, color = "black")
   ) +
-  geom_rect(aes(xmin = 147.099, xmax = 147.498, ymin = 20, ymax = 80), fill = "darkblue", alpha = 0.1 )+
+  geom_rect(aes(xmin = 147.099, xmax = 147.498, ymin = 20, ymax = 80), fill = "darkblue", alpha = 0.12 )+
   scale_y_continuous(limits = c(20, 80))
 
 
@@ -84,8 +84,8 @@ plot.coverage.bp <- ggplot()+
               size = 2.6) +
   labs(y = "\n\nNormalized Coverage", x = "Chromosome 9 (kb)") +
   theme_classic() +
-  geom_rect(aes(xmin = 147.099, xmax = 147.498, ymin = 0, ymax = 5.2), fill = "darkblue", alpha = 0.1 )+ # HobS
-  geom_rect(aes(xmin = 148.500, xmax = 149.100, ymin = 0, ymax = 5.2), fill = "darkred", alpha = 0.1 )+ #break point
+  geom_rect(aes(xmin = 147.099, xmax = 147.498, ymin = 0, ymax = 5.2), fill = "darkblue", alpha = 0.12 )+ # HobS
+  geom_rect(aes(xmin = 148.950, xmax = 149.100, ymin = 0, ymax = 5.2), fill = "darkred", alpha = 0.12 )+ #break point
   theme(
       axis.text.y = element_text(size = 8, color = "black"),
       axis.text.x = element_text(size = 8, color = "black"),
@@ -94,7 +94,7 @@ plot.coverage.bp <- ggplot()+
       axis.title.x = element_text(face = "bold", size = 9, color = "black"),
       axis.title.y = element_text(face = "bold", size = 9, color = "black")  )
 
-#plot.coverage.bp
+
 plot.chr9.breakpoint <- plot_grid(plot.Chr9.GC, plot.coverage.bp, nrow = 2, align = "hv", rel_heights = c(0.4, 1), labels = c("A)", "B)"))  
 
 ggsave(filename = "normalizedCoverageTables/CoveragePlots/Supp.Figure.NormCov.bpResolution.png", plot = plot.chr9.breakpoint, width = 16, height = 11, units = "cm", dpi = 300)  

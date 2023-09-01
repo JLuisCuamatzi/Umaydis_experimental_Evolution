@@ -55,7 +55,7 @@ df <- df %>% mutate(Strip.Labs.2 = case_when(
   startsWith(df$Lineages, "Line F") ~ ""
 ))
 
-df %>% dplyr::filter(Strain != "SG200") %>% dplyr::group_by(Group) %>% t_test(cm ~ Day)
+df %>% dplyr::filter(Strain != "SG200") %>% dplyr::group_by(Group) %>% t_test(cm ~ Day, paired = T)
 
 #plot.Figure.2 <- df %>% group_by(Day, Strain, Lineages, Group, Strip.Labs, Fill) %>% 
 plot.Figure.2 <- 
@@ -125,7 +125,6 @@ plot.Figure.2 <-
          ); plot.Figure.2
 
 ## save the plot
-getwd()
 setwd("../")
 dirSavePlots <- "Figures"
 
