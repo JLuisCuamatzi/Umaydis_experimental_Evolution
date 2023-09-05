@@ -128,6 +128,12 @@ stat.test <- df.qpcr %>%
   t_test(FoldChange ~ Strain) %>% 
   add_xy_position(x = "Strain")
 
+stat.test <- stat.test[stat.test$Condition != "0 mM",]
+
+stat.test$label <- sprintf("%.3f", stat.test$p)
+
+# Estimate the mean of the fold change
+
 df.mean <- df.qpcr %>% group_by(Strain, Condition) %>% 
   summarise(Mean.FC = mean(FoldChange)) %>% 
   ungroup() %>% setDT()
@@ -135,7 +141,7 @@ df.mean <- df.qpcr %>% group_by(Strain, Condition) %>%
 df.mean <- df.mean[Condition != "0 mM"]
 df.qpcr <- df.qpcr[Condition != "0 mM"]
 
-stat.test <- stat.test[stat.test$Condition != "0 mM",]
+
 
 df.mean <- df.mean %>% mutate(Chr9.LA = case_when(
   startsWith(df.mean$Strain, "SG200") ~ "1X",
@@ -149,8 +155,6 @@ df.qpcr <- df.qpcr %>% mutate(Chr9.LA = case_when(
   startsWith(df.qpcr$Strain, "T20.LB.1") ~ "2X",
   startsWith(df.qpcr$Strain, "T20.LC.1") ~ "3X"
 ))
-
-stat.test$label <- sprintf("%.3f", stat.test$p)
 
 # box plot con ggplot
 Figure.5B <- ggplot()+

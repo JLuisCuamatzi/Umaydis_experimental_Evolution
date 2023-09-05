@@ -117,7 +117,7 @@ plot.Figure.1 <- df2plot.1 %>%
   theme_classic() +
   scale_fill_manual(values = c("gray60", "black"))+ 
   scale_color_manual(values = c("gray60", "black"))+ 
-  labs(y = "Colony-Forming Units (CFU)\n") +
+  labs(y = "Percentage of Surviving Cells\n") +
   facet_grid(~Strip.Labs, scales = "free", space = "free", switch = "both")+
   theme(
     panel.background = element_blank(),
@@ -140,7 +140,7 @@ plot.Figure.1 <- df2plot.1 %>%
          color = "none"); plot.Figure.1
 
 ## save the plot
-setwd("../")
+
 dirSavePlots <- "Figures"
 
 if ( dir.exists(dirSavePlots) ){
@@ -152,14 +152,9 @@ if ( dir.exists(dirSavePlots) ){
 }
 
 file.Figure.1 <- paste(dirSavePlots, "Figure1_USMA_Paper.png", sep = "/")
+getwd()
+ggsave(filename = file.Figure.1, plot = plot.Figure.1, width = 13, height = 9, dpi = 300, units = "cm")
 
-if (file.exists(file.Figure.1)){
-  print ("Figure Already Exists!")
-} else {
-  print ("The plot will be saved")
-  ggsave(filename = file.Figure.1, plot = plot.Figure.1,
-         width = 13, height = 9, dpi = 300, units = "cm")
-}
 
 
 rm(list = ls())
