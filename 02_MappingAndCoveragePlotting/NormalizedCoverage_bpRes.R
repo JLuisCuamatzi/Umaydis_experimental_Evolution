@@ -81,7 +81,7 @@ plot.coverage.bp <- ggplot()+
               fill = c("gray", "gray", "gray", "darkblue", "gray", "gray"), alpha = 0.5, color = "black") +
   theme_classic() +
   geom_text(data = df.genes, aes(x = TextPositionX, label = Gene, y = TextPositionY),
-              size = 2.6) +
+              size = 2.2) +
   labs(y = "\n\nNormalized Coverage", x = "Chromosome 9 (kb)") +
   theme_classic() +
   geom_rect(aes(xmin = 147.099, xmax = 147.498, ymin = 0, ymax = 5.2), fill = "darkblue", alpha = 0.12 )+ # HobS
