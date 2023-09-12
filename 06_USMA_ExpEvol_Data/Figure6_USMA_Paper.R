@@ -108,7 +108,7 @@ plot.oex.mutant <- ggplot() +
   scale_color_manual(values = wes_palette("Cavalcanti1"))+
   #scale_color_colorblind() +
   
-  labs(y = "Colony-Forming Units (CFU)\n", x = "\nStrain")+
+  labs(y = "Percentage of Surviving Cells\n", x = "\nStrain")+
   theme_classic() +
   theme(strip.background = element_blank(),
         legend.position = "none",
@@ -275,6 +275,7 @@ plot.infection <- ggplot() +
 Figure.6 <- plot_grid(plot.oex.mutant, plot.infection, 
                       rel_widths = c(0.75, 1), scale = 0.9, labels = c("A)", "B)"))
 
+Figure.6
 
 #### export plots
 dirSavePlots <- "Figures"

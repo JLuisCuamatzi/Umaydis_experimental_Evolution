@@ -80,8 +80,8 @@ Figure.5A <- df2plot %>% arrange(Strain) %>% mutate(X.Labs = rep(seq(1,5,1), 3) 
   facet_grid(~Line, scales = "free", space = "free", switch = "both") +
   geom_hline(yintercept = 0)+
   theme_classic() +
-  scale_y_continuous(limits = c(0, 8), breaks = seq(0, 8, 1)) +
-  labs(x ="Colonies from Lines Evolved for 200 generations", 
+  scale_y_continuous(limits = c(0, 6.5), breaks = seq(0, 6, 1)) +
+  labs(x ="Colonies at Generation 200", 
        y = expression("Area of H"["2"]*"O"["2"]*" Inhibition Halo (cm"^"2"*")")) +
   scale_fill_manual(values = c( 
     "white", #1X
@@ -94,10 +94,10 @@ Figure.5A <- df2plot %>% arrange(Strain) %>% mutate(X.Labs = rep(seq(1,5,1), 3) 
     "black"  # 3X
   )) +  
   theme(
-    legend.position = c(0.18, 0.85),
-    legend.text = element_text(size = 9),
+    legend.position = c(0.5, 0.92),
+    legend.direction = "horizontal",
+    legend.key.size = unit(0.35, "cm"),
     
-    #axis.text.x = element_text(vjust = 0.5, color = "black"),
     
     axis.title.x = element_text(margin = unit(c(3,0,0,0), "mm")),
     axis.title.y = element_text(margin = unit(c(0,5,0,0), "mm")),
@@ -113,11 +113,9 @@ Figure.5A <- df2plot %>% arrange(Strain) %>% mutate(X.Labs = rep(seq(1,5,1), 3) 
     #
     axis.title = element_text(size = 12, color = "black")) +
   guides(fill = guide_legend(title = "Copy Number\nLeft Arm Chr 9",
-                             title.theme = element_text(size = 10)),
+                             title.theme = element_text(size = 8, face = "bold")),
          color = guide_legend(title = "Copy Number\nLeft Arm Chr 9",
-                              title.theme = element_text(size = 10)))
-
-
+                              title.theme = element_text(size = 7, face = "bold")));Figure.5A
 ## Figure 5.B
 
 df.qpcr <- read_excel(path = "ExpEvol_Resistance_Chr9_Data/UMAG_11067_qPCR.xlsx", sheet = "Fold_Change") # read the file
@@ -211,7 +209,7 @@ Figure.5B <- ggplot()+
 
 Figure.5 <- plot_grid(Figure.5A, Figure.5B, rel_widths = c(1.0, 0.5), labels = c("A)", "B)"), scale = 0.9)
 
-Figure.5
+#Figure.5
 
 dirSavePlots <- "Figures"
 
@@ -223,12 +221,10 @@ if ( dir.exists(dirSavePlots) ){
 
 plot.Figure5 <- paste(dirSavePlots, "Figure5_USMA_Paper.png", sep = "/")
 
-if (file.exists(plot.Figure5)){
-  print ("Figure Already Exists!")
-} else {
-  ggsave(filename = plot.Figure5, plot = Figure.5,
-         width = 18, height = 12, units = "cm", dpi = 300)
-}
+
+ggsave(filename = plot.Figure5, plot = Figure.5,
+       width = 18, height = 12, units = "cm", dpi = 300)
+
 
 
 rm(list = ls())
