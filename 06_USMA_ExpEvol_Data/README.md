@@ -1,3 +1,1 @@
-Data derived from experimental evolution, UMAG_11067 gene expression, and overexpression of UMAG_11067
-
-
+In this directory you will find the data, photographs of plates and corn plants, as well as the R scripts to reproduce Figures 1, 2, 5, and 6.
