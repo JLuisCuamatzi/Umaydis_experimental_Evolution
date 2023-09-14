@@ -1,5 +1,7 @@
 # Experimental evolution of <i>Ustilago maydis</i> SG200 under oxidative stress
 
+## Repository created by Jorge Cuamatzi-Flores
+
 Repository with scripts to reproduce the analysis and figures presented in: [insert link to paper here]
 
 ## Bioinformatic analysis of sequenced genomes in the experimental evolution
