@@ -1,4 +1,7 @@
 
+# script for figure 4 in the main manuscript
+# author: jcuamatzi
+
 # Libraries
 library_names <- c("data.table", "ggthemes", "ggplot2", "tidyverse", "dplyr", "scales", "cowplot", "grid", "optparse")
 

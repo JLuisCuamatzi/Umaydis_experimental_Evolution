@@ -147,7 +147,9 @@ sh shFiles/2021EE01_NormCovAndPlotting.sh
 
 Finally, the ratio between normalized coverage in each sample against reference sample (<i>U. maydis</i> SG200) was computed in R in the next script:
 
-`Coverage_Ratio_Log2.Rmd`
+`Coverage_Ratio_Log2.R`
+
+The file `02_MappingAndCoveragePlotting/Figures_RatioLog2/Plot_USMA_521_v2_9.Log2Ratio.png` is the <b>Figure 3</b> in the main manuscript.
 
 
 

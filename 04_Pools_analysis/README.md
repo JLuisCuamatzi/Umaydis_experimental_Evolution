@@ -18,7 +18,7 @@ head -n 1 ../03_SNP_Calling/SNPCalling/Tables/SNPsToCheck.bed > SNP_in_UMAG_0554
 
 ```
 
-The file `SNP_in_UMAG_05545.bed` is the input `bcftools mpileup` as follows:
+The file `SNP_in_UMAG_05545.bed` is the input for `bcftools mpileup` as follows:
 
 
 ```
@@ -47,4 +47,4 @@ Rscript CheckingVariantsInPools.R
 
 ```
 
-The output of this file is the next file: `Figure_Variants.Pools.png`
+The output of this file is the next file: `Figure_Variants.Pools.png`, which is the <b>Figure 4</b> in the main manuscript.
