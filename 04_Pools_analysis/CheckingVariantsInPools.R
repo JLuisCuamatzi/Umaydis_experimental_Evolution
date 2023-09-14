@@ -1,7 +1,7 @@
 
 # script for figure 4 in the main manuscript
 # author: jcuamatzi
-
+rm(list = ls())
 # Libraries
 library_names <- c("data.table", "ggthemes", "ggplot2", "tidyverse", "dplyr", "scales", "cowplot", "grid", "optparse")
 
@@ -14,6 +14,11 @@ for (lib in library_names) {
 }
 
 rm(lib, library_names)
+
+# set directory
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+
 
 # Custom functions:
 transform.table.snp.freq <- function(df.snp.freq){
@@ -193,7 +198,7 @@ Figure.Chr9.Pools <- df.cov.9.pools %>%
     #axis.line.y = element_blank(),
     # titles
     #plot.title = element_text(size = 12, color = "black", hjust = 0.5),
-    plot.title = element_text(hjust = 0.5, size = 12, color = "black"),
+    plot.title = element_text(hjust = 0.5, size = 10, color = "black"),
     axis.title.y = element_text(size = 12, color = "black"),
     axis.title.x = element_text(size = 12, color = "black"),
     # axis text
@@ -261,7 +266,7 @@ setDT(df.pools.Frequency)
 rm(list = ls(pattern = "df.pools.2021"))
 
 # Read the final SNPs to check the alternative detected at chr18:330272
-df.SNP.ID <- fread("../03_SNP_Calling/Annotation_of_SNPs.csv") # snps (Q > 200 & AF > 90)
+df.SNP.ID <- fread("../03_SNP_Calling/Umaydis_EE_Annotated_SNPs.csv") # snps (Q > 200 & AF > 90)
 df.SNP.ID$SNP_ID_1 <- paste0(df.SNP.ID$Chromosome, "-", df.SNP.ID$Position)
 
 # add whole SNP Information 
@@ -310,7 +315,7 @@ Figure.SNPs.Pools<- df.SNP.Target %>%
   #scale_color_manual(values = c("#3C8200", "gray", "#7FAFD2")) +
   theme(axis.text.x = element_text(vjust = 0.5, color = "black", size = 10),
         axis.text.y = element_text(size = 10, color = "black"),
-        plot.title = element_text(hjust = 0.30, size = 12, color = "black"),
+        plot.title = element_text(hjust = 0.30, size = 10, color = "black"),
         #plot.subtitle = element_text(hjust = 0.5),
         legend.justification = "top",
         axis.title = element_text(size = 12, color = "black"),
@@ -328,3 +333,6 @@ Figure.Variants.Pools <- plot_grid(Figure.SNPs.Pools, Figure.Chr9.Pools, ncol = 
 plot.Figure.Variants.Pools <- "Figure_Variants.Pools.png"
 
 ggsave(filename = plot.Figure.Variants.Pools, plot = Figure.Variants.Pools, width = 10.5, height = 6, units = "in", dpi = 300)
+
+
+rm(list = ls())
