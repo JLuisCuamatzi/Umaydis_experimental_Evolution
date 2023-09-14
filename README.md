@@ -8,7 +8,7 @@ Repository with scripts to reproduce the analysis conducted on: [insert link to 
 
 All raw fastq files used for this research are available at NCBI (BioProject Id: PRJNA1005765). 
 
-The document 'Data_Sheet_to_Download_Fastq_Files.csv' in the main directory (~/Umaydis_experimental_Evolution) contains the accession number assigned to each sample.
+The document `Data_Sheet_to_Download_Fastq_Files.csv` in the main directory `~/Umaydis_experimental_Evolution` contains the accession number assigned to each sample.
 
 
 ### Cleaning
