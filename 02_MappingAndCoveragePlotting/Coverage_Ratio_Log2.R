@@ -1,4 +1,4 @@
-# Script for Figure 3
+# Script for Figure 3, aneuploidy at chr9 
 # author: jcuamatzi
 
 # load libraries
