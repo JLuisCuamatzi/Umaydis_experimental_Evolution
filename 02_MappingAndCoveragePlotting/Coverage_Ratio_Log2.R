@@ -1,12 +1,5 @@
----
-title: "New_Figure3_USMA_Paper"
-author: "J Cuamatzi"
-date: "19/7/2023"
-output: html_document
----
-
-
-```{r libraries, echo = F, include=F}
+# Script for Figure 3
+# author: jcuamatzi
 
 # load libraries
 libraries <- c("data.table", "dplyr", "tidyr", "ggplot2", "scales", "cowplot", "stringr")
@@ -21,9 +14,10 @@ for (lib in libraries) {
 
 rm(list = ls()) # clean env.
 
-```
+# set directory
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
-```{r functions, echo=F, include=F}
+
 ### Functions
 # Function to read the files with normalized coverage data:
 
@@ -62,7 +56,7 @@ adjust.coverage <- function(dataset.coverage, threshold.cov){
   
   
   return(dataset.coverage)  
-
+  
 }
 
 # Function to compute log2
@@ -126,8 +120,8 @@ plot.heatmap.log2 <- function(data.set, target.chr){
       axis.title.y = element_text(size = 12, color = "black"),
       axis.title.x = element_text(size = 12, color = "black"),
       # axis text
-      axis.text.x = element_text(size = 12, color = "black", angle = 90),
-      axis.text.y = element_text(size = 12, color = "black"),
+      axis.text.x = element_text(size = 9, color = "black", angle = 90),
+      axis.text.y = element_text(size = 9, color = "black"),
       # axis ticks
       axis.ticks.y = element_blank(),
       
@@ -147,11 +141,9 @@ plot.heatmap.log2 <- function(data.set, target.chr){
 }
 
 
-```
 
-```{r Figure3, echo=F, warning=FALSE}
-# Read file with samples ID
-getwd()
+
+# reading files with sample information
 df.samples <- fread("../USMA_EE_Colonies_SampleSheet.csv")
 
 # Read whole info of samples
@@ -164,14 +156,16 @@ rm(split_data)
 
 # Read files with normalized coverage
 
+setwd("normalizedCoverageTables/")
+
+
 for (sample in df.samples$SampleID){
-  setwd("")
+  
   # Create object with the name of the df
   df.name <- paste0("df.", sample)
   
   # Check if the file exists before reading it
-  file2read <- paste0("normalizedCoverageTables/", sample, "_NormalizedCoverage.txt")
-  print(file2read)
+  file2read <- paste0(sample, "_NormalizedCoverage.txt")
   
   if (file.exists(file2read)) {
     # Read file into a tmp df
@@ -214,44 +208,63 @@ df.AllSamples <- df.AllSamples %>% filter(!chr %in% c("USMA_521_v2_24","USMA_521
                                                       "USMA_521_v2_26","USMA_521_v2_27",
                                                       "USMA_521_v2_28"))
 
+#
+#
 
-```
 
-
-```{r plotting, echo = F}
 ## Remove samples: 2021EE02, 2021EE03, 2021EE04 (colonies from gen 100) and SG200
+# The plots will only show the data of colonies at 200 gen.
 df.AllSamples2plot <- df.AllSamples %>% filter(!sample %in% c("2021EE02", "2021EE03", "2021EE04", "2021EE01", "2021EE23", "2021EE24"))
 
 ## Indicate the y.order for the plot
 df.AllSamples2plot <- df.AllSamples2plot %>% 
   mutate(y.order = case_when(
-  endsWith(df.AllSamples2plot$ColName, ".C1") ~ "1",
-  endsWith(df.AllSamples2plot$ColName, ".C2") ~ "2",
-  endsWith(df.AllSamples2plot$ColName, ".C3") ~ "3",
-  endsWith(df.AllSamples2plot$ColName, ".C4") ~ "4",
-  endsWith(df.AllSamples2plot$ColName, ".C5") ~ "5"
-))
+    endsWith(df.AllSamples2plot$ColName, ".C1") ~ "1",
+    endsWith(df.AllSamples2plot$ColName, ".C2") ~ "2",
+    endsWith(df.AllSamples2plot$ColName, ".C3") ~ "3",
+    endsWith(df.AllSamples2plot$ColName, ".C4") ~ "4",
+    endsWith(df.AllSamples2plot$ColName, ".C5") ~ "5"
+  ))
 
 df.AllSamples2plot$y.order <- factor(df.AllSamples2plot$y.order, levels = c("5", "4", "3", "2", "1"))
 df.AllSamples2plot$Line <- gsub("Line", "Line ", df.AllSamples2plot$Line)
 
 usma.chr <- unique(df.AllSamples$chr)
 
+
+setwd("../")
+dir.create("Figures_RatioLog2")
+setwd("Figures_RatioLog2")
+
 for (chr in usma.chr){
-  plot.file <- paste0("~/Umaydis_experimental_Evolution/02_MappingAndCoveragePlotting/Figures/Plot_", chr, ".Log2Ratio.png")
+  
+  plot.file <- paste0("Plot_", chr, ".Log2Ratio.png")
+  
+  print(paste0("Plotting: ", plot.file))
   
   my.plot <- plot.heatmap.log2(data.set = df.AllSamples2plot , target.chr = chr)
   
-  ggsave(filename = plot.file, plot = my.plot,
-       width = 8, height = 2.5, units = "in", dpi = 300)
-                      
+  ggsave(filename = plot.file, plot = my.plot, width = 8, height = 2.5, units = "in", dpi = 300)
+  
 }
 
 
-```
-
-```{r cleanEnv, echo = F, include = F}
 rm(list = ls())
 
-```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
