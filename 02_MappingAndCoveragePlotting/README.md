@@ -221,7 +221,7 @@ python3 Split.Reference.Genome.py -f ../USMA_Genome/USMA_521_v2/USMA_521_v2.fast
 
 ## Running CNVnator
 
-The versions used was `cnvator v.0.3.3`
+The version used was `cnvator v.0.3.3`
 
 We used the next code to process one sample:
 
@@ -256,9 +256,9 @@ python3 02.2_CNVnator.py -c ../USMA_EE_Pools_SampleSheet.csv
 
 ```
 
-Once this script is executed, a directory named `shFiles` will be created. In this directory will be the `.sh` files to be executed.
+The sh files resulting from that command are located in `shFiles/`
 
-You can run these `.sh` files with the next command:
+Theses files can be executed with:
 
 ```
 # Example for sample 2021EE01

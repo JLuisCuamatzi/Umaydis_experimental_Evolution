@@ -1,10 +1,6 @@
 """
 @ author: jcuamatzi
 
-this script needs the next:
--c SampleSheet.csv
-
-
 USAGE:
 
 python3 02.2_CNVnator.py -c ../USMA_EE_Colonies_SampleSheet.csv
@@ -37,8 +33,8 @@ def generate_sh_file(sampleID):
         sh_file.write('# Create variables\n')
         sh_file.write("ref_genome='../USMA_Genome/USMA_521_v2/USMA_521_v2.fasta'\n")
         sh_file.write(f"cramFile='bamFiles/{sampleID}_BWA.mrkdup.addgp.cram'\n")
-        sh_file.write(f"rootFile='rootFiles/{sampleID}.root'\n")
-        sh_file.write(f"outputFile='cnvFiles/{sampleID}.cnvnator'\n")
+        sh_file.write(f"rootFile='CNV_by_CNVnator/rootFiles/{sampleID}.root'\n")
+        sh_file.write(f"outputFile='CNV_by_CNVnator/cnvFiles/{sampleID}.cnvnator'\n")
         #
         sh_file.write('# Create dirs\n')
         sh_file.write('mkdir -p CNV_by_CNVnator/rootFiles/\n')
