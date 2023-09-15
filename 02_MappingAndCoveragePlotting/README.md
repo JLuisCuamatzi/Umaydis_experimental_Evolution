@@ -15,11 +15,13 @@ In the next stage of our pipeline, we did the following:
 
 <b>02.5.- Analysis of coverage with a base-pair resolution at the breakpoint of chr 9 duplication</b>
 
+<b>02.6.- Analysis of Copy Number Variations with CNVnator</b>
+
 ### 02.1.- Mapping
 
 In this stept, the reads in `fastq` files were aligned to the reference genome of <i>Ustilago maydis</i>
 
-For the alignment we used [BWA_mem]([https://academic.oup.com/bioinformatics/article/26/5/589/211735) using the next code:
+For the alignment we used <b>[BWA_mem]([https://academic.oup.com/bioinformatics/article/26/5/589/211735)</b> using the next code:
 
 ```
 ## Running for sample: 2021EE01
@@ -204,9 +206,63 @@ The normalized coverage at bp Resolution was plotted with the next Rscript: `Nor
 Additionally, we plotted the genes flankig the breakpoint, and the GC percent in that region.
 
 
+## 02.6.- Analysis of Copy Number Variations with CNVnator
 
+We conducted an analysis with <b>[CNVnator](https://genome.cshlp.org/content/21/6/974.short)</b> in order to get a more precise size of the chromosomal amplifications detected by analyzing the log<sub>2</sub> ratio
 
+First, is required to generate individual files for each chr in the reference genome
 
+For this, we used the next Python script: `Split.Reference.Genome.py`
 
+```
+python3 Split.Reference.Genome.py -f ../USMA_Genome/USMA_521_v2/USMA_521_v2.fasta
 
+```
 
+## Running CNVnator
+
+The versions used was `cnvator v.0.3.3`
+
+We used the next code to process one sample:
+
+```
+# Create variables
+# example for sample 2021EE01
+
+ref_genome='../../USMA_Genome/USMA_521_v2/USMA_521_v2.fasta'
+cramFile='../bamFiles/2021EE01_BWA.mrkdup.addgp.cram'
+rootFile='rootFiles/2021EE01.root'
+outputFile='cnvFiles/2021EE01.cnvnator'
+
+# create dirs
+mkdir -p rootFiles/
+mkdir -p cnvFiles/
+
+# Execute CNVnator
+cnvnator -root $rootFile -genome $ref_genome -tree $cramFile
+cnvnator -root $rootFile -his 150 -d ../../USMA_Genome/USMA_521_v2/
+cnvnator -root $rootFile -stat 150
+cnvnator -root $rootFile -partition 150
+cnvnator -root $rootFile -call 150 > $outputFile
+
+```
+
+To optimize the execution of this process, I wrote the `02.2_CNVnator.py` python script that generates sh files with the aforementioned commands.
+
+```
+python3 02.2_CNVnator.py -c ../USMA_EE_Colonies_SampleSheet.csv
+
+python3 02.2_CNVnator.py -c ../USMA_EE_Pools_SampleSheet.csv
+
+```
+
+Once this script is executed, a directory named `shFiles` will be created. In this directory will be the `.sh` files to be executed.
+
+You can run these `.sh` files with the next command:
+
+```
+# Example for sample 2021EE01
+
+sh shFiles/2021EE01_CNVnator.sh
+
+```

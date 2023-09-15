@@ -158,6 +158,8 @@ rm(split_data)
 
 setwd("normalizedCoverageTables/")
 
+# Exclude SG200 sequenced with Illumina (2021EE47)
+df.samples <- df.samples %>% filter(SampleID != "2021EE47")
 
 for (sample in df.samples$SampleID){
   
@@ -208,10 +210,6 @@ df.AllSamples <- df.AllSamples %>% filter(!chr %in% c("USMA_521_v2_24","USMA_521
                                                       "USMA_521_v2_26","USMA_521_v2_27",
                                                       "USMA_521_v2_28"))
 
-#
-#
-
-
 ## Remove samples: 2021EE02, 2021EE03, 2021EE04 (colonies from gen 100) and SG200
 # The plots will only show the data of colonies at 200 gen.
 df.AllSamples2plot <- df.AllSamples %>% filter(!sample %in% c("2021EE02", "2021EE03", "2021EE04", "2021EE01", "2021EE23", "2021EE24"))
@@ -229,9 +227,10 @@ df.AllSamples2plot <- df.AllSamples2plot %>%
 df.AllSamples2plot$y.order <- factor(df.AllSamples2plot$y.order, levels = c("5", "4", "3", "2", "1"))
 df.AllSamples2plot$Line <- gsub("Line", "Line ", df.AllSamples2plot$Line)
 
+# Extract the chr in a vector
 usma.chr <- unique(df.AllSamples$chr)
 
-
+## Plotting
 setwd("../")
 dir.create("Figures_RatioLog2")
 setwd("Figures_RatioLog2")
@@ -249,6 +248,45 @@ for (chr in usma.chr){
 }
 
 
+## Checking all the CNV
+# identifiy if in subsequent windows there is a duplication, for this, use as threshold a ratio >= 1.7 (two copies), use the log2 of this value
+
+# duplications
+cnv.dup.all.consecutive.windows <- df.AllSamples2plot %>%
+  group_by(chr, sample) %>%
+  mutate(
+    ConsecutiveAboveThreshold = ifelse(
+      log2ratio >= log2(1.7) & (lag(log2ratio, default = first(log2ratio)) >= log2(1.7) | is.na(lag(log2ratio))),
+      "Yes",
+      "No"
+    )
+  ) %>%
+  ungroup() %>% 
+  filter(ConsecutiveAboveThreshold == "Yes") %>% 
+  arrange(sample)
+  
+write.table(x = cnv.dup.all.consecutive.windows, file = "Table.LargeDuplications.2kb.txt", quote = F, sep = "\t", row.names = F)
+
+# Deletions cnv.del.all.consecutive.windows <- 
+cnv.del.all.consecutive.windows <- df.AllSamples2plot %>%
+  group_by(chr, sample) %>%
+  mutate(
+    ConsecutiveAboveThreshold = ifelse(
+      log2ratio <= log2(0.25) & (lag(log2ratio, default = first(log2ratio)) <= log2(0.25) | is.na(lag(log2ratio))),
+      "Yes",
+      "No"
+    )
+  ) %>%
+  ungroup() %>% 
+  filter(ConsecutiveAboveThreshold == "Yes") %>% 
+  arrange(sample)
+
+cnv.del.all.consecutive.windows
+
+
+
+
+# end script
 rm(list = ls())
 
 
