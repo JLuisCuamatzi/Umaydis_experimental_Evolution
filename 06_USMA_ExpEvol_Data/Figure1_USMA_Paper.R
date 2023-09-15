@@ -1,3 +1,5 @@
+# author: jcuamatzi
+
 # Libraries:
 libraries <- c("ggplot2", "data.table", "dplyr", "tidyr", "scales")
 

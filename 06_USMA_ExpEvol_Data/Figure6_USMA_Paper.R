@@ -1,3 +1,5 @@
+# author: jcuamatzi
+ # code to plot the infection symptoms was adapted from https://gitlab.gwdg.de/molsysevol/umag_11064/-/blob/master/Infections/InfectionResultsAnalysis.R?ref_type=heads
 # load libraries
 libraries <- c("ggplot2", "dplyr", "tidyr", "scales", "data.table", "RColorBrewer", "ggthemes", "cowplot", "wesanderson", "rstatix")
 

@@ -1,3 +1,5 @@
+## author: jcuamatzi
+
 # script to plot the coverage
 #### script for R version = r/3.6.1
 # Libraries

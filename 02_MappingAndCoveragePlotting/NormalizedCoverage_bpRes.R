@@ -1,3 +1,5 @@
+## author: jcuamatzi
+
 libraries <- c("data.table", "ggplot2", "tidyr", "cowplot", "dplyr")
 
 for (lib in libraries) {

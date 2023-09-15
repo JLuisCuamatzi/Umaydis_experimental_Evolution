@@ -1,7 +1,9 @@
 """
-@ USAGE:
+@author: jcuamatzi
 
-@ python3 MedianCoverage.py -i 2021EE01_Q30.depth.gz -o 2021EE01_NormalizedCoverage.txt -w 1000
+USAGE:
+
+python3 MedianCoverage.py -i 2021EE01_Q30.depth.gz -o 2021EE01_NormalizedCoverage.txt -w 1000
 """
 
 

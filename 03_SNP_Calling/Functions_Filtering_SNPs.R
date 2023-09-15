@@ -1,3 +1,4 @@
+## author: jcuamatzi
 
 #load libraries
 library(vcfR) # works
