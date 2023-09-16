@@ -6352,7 +6352,7 @@ KIS68296,USMA_521_v2_9,9601,9909,UMAG_03395,hypothetical protein,Hypothetical,10
 KIS68297,USMA_521_v2_9,10280,12949,UMAG_03396,hypothetical protein,Hypothetical,10674,Zn(2)-C6 fungal-type domain-containing protein,UMAG_03396,889,,,,,,,,,,
 KIS68298,USMA_521_v2_9,13883,15544,UMAG_03397,hypothetical protein,Hypothetical,10675,ANK_REP_REGION domain-containing protein,UMAG_03397,553,,,,,,,,,,
 KIS68299,USMA_521_v2_9,17198,18403,UMAG_03398,hypothetical protein,Hypothetical,10676,Beta-lactamase domain-containing protein,UMAG_03398,401,,,,,,,,,,
-KIS68300,USMA_521_v2_9,18661,20910,UMAG_11067,putative catalase 2,Putative,10677,Catalase-peroxidase (CP) (EC 1.11.1.21) (Peroxidase/catalase),katG,UMAG_11067,749,cellular response to hydrogen peroxide [GO:0070301]; hydrogen peroxide catabolic process [GO:0042744],,,,,,,,
+KIS68300,USMA_521_v2_9,18661,20910,UMAG_11067,putative catalase 2,Putative,10677,Catalase-peroxidase (CP) (EC 1.11.1.21) (Peroxidase/catalase) katG,UMAG_11067,749,cellular response to hydrogen peroxide [GO:0070301]; hydrogen peroxide catabolic process [GO:0042744]
 KIS68301,USMA_521_v2_9,22405,24039,UMAG_03400,hypothetical protein,Hypothetical,10678,Choline transport protein,UMAG_03400,544,,,,,,,,,,
 KIS68302,USMA_521_v2_9,25487,27595,UMAG_11068,hypothetical protein,Hypothetical,10679,Amine oxidase (EC 1.4.3.-),UMAG_11068,702,amine metabolic process [GO:0009308],,,,,,,,,
 KIS68303,USMA_521_v2_9,29107,30555,UMAG_03402,Indole-3-acetaldehyde dehydrogenase,Annotated,10680,Indole-3-acetaldehyde dehydrogenase,UMAG_03402,482,,,,,,,,,,
