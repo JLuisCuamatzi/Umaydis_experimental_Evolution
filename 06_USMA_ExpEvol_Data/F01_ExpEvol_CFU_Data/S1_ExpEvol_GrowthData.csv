@@ -1,0 +1,361 @@
+Condition,TreatmentNum,HydrogenPeroxide,Line,Quantification,Cellular_concentration,Time,cumulative_time
+Control,Treatment 01,w/o ROS 0 mM,Line D,cells_i,1.00E+06,1,1
+Control,Treatment 01,w/o ROS 0 mM,Line E,cells_i,1.00E+06,1,1
+Control,Treatment 01,w/o ROS 0 mM,Line F,cells_i,1.00E+06,1,1
+H2O2,Treatment 01,5 mM,Line A,cells_i,1.00E+06,1,1
+H2O2,Treatment 01,5 mM,Line B,cells_i,1.00E+06,1,1
+H2O2,Treatment 01,5 mM,Line C,cells_i,1.00E+06,1,1
+Control,Treatment 01,w/o ROS 0 mM,Line D,CFU,2120000,3,4
+Control,Treatment 01,w/o ROS 0 mM,Line D,cells_mL,18666666.67,45,49
+Control,Treatment 01,w/o ROS 0 mM,Line E,CFU,1910000,3,4
+Control,Treatment 01,w/o ROS 0 mM,Line E,cells_mL,2.80E+07,45,49
+Control,Treatment 01,w/o ROS 0 mM,Line F,CFU,1870000,3,4
+Control,Treatment 01,w/o ROS 0 mM,Line F,cells_mL,2.40E+07,45,49
+H2O2,Treatment 01,5 mM,Line A,CFU,650000,3,4
+H2O2,Treatment 01,5 mM,Line A,cells_mL,1.80E+07,45,49
+H2O2,Treatment 01,5 mM,Line B,CFU,6.00E+05,3,4
+H2O2,Treatment 01,5 mM,Line B,cells_mL,17333333.33,45,49
+H2O2,Treatment 01,5 mM,Line C,CFU,670000,3,4
+H2O2,Treatment 01,5 mM,Line C,cells_mL,13333333.33,45,49
+Control,Treatment 02,w/o ROS 0 mM,Line D,cells_i,1.00E+06,1,50
+Control,Treatment 02,w/o ROS 0 mM,Line E,cells_i,1.00E+06,1,50
+Control,Treatment 02,w/o ROS 0 mM,Line F,cells_i,1.00E+06,1,50
+H2O2,Treatment 02,5 mM,Line A,cells_i,1.00E+06,1,50
+H2O2,Treatment 02,5 mM,Line B,cells_i,1.00E+06,1,50
+H2O2,Treatment 02,5 mM,Line C,cells_i,1.00E+06,1,50
+Control,Treatment 02,w/o ROS 0 mM,Line D,CFU,1730000,3,53
+Control,Treatment 02,w/o ROS 0 mM,Line D,cells_mL,2.00E+07,45,98
+Control,Treatment 02,w/o ROS 0 mM,Line E,CFU,1850000,3,53
+Control,Treatment 02,w/o ROS 0 mM,Line E,cells_mL,21333333.33,45,98
+Control,Treatment 02,w/o ROS 0 mM,Line F,CFU,1910000,3,53
+Control,Treatment 02,w/o ROS 0 mM,Line F,cells_mL,16666666.67,45,98
+H2O2,Treatment 02,5 mM,Line A,CFU,780000,3,53
+H2O2,Treatment 02,5 mM,Line A,cells_mL,10666666.67,45,98
+H2O2,Treatment 02,5 mM,Line B,CFU,840000,3,53
+H2O2,Treatment 02,5 mM,Line B,cells_mL,17333333.33,45,98
+H2O2,Treatment 02,5 mM,Line C,CFU,810000,3,53
+H2O2,Treatment 02,5 mM,Line C,cells_mL,1.60E+07,45,98
+Control,Treatment 03,w/o ROS 0 mM,Line D,cells_i,1.00E+06,1,99
+Control,Treatment 03,w/o ROS 0 mM,Line E,cells_i,1.00E+06,1,99
+Control,Treatment 03,w/o ROS 0 mM,Line F,cells_i,1.00E+06,1,99
+H2O2,Treatment 03,8 mM,Line A,cells_i,1.00E+06,1,99
+H2O2,Treatment 03,8 mM,Line B,cells_i,1.00E+06,1,99
+H2O2,Treatment 03,8 mM,Line C,cells_i,1.00E+06,1,99
+Control,Treatment 03,w/o ROS 0 mM,Line D,CFU,1800000,3,102
+Control,Treatment 03,w/o ROS 0 mM,Line D,cells_mL,19333333.33,45,147
+Control,Treatment 03,w/o ROS 0 mM,Line E,CFU,2040000,3,102
+Control,Treatment 03,w/o ROS 0 mM,Line E,cells_mL,1.70E+07,45,147
+Control,Treatment 03,w/o ROS 0 mM,Line F,CFU,1960000,3,102
+Control,Treatment 03,w/o ROS 0 mM,Line F,cells_mL,1.30E+07,45,147
+H2O2,Treatment 03,8 mM,Line A,CFU,360000,3,102
+H2O2,Treatment 03,8 mM,Line A,cells_mL,6.00E+06,45,147
+H2O2,Treatment 03,8 mM,Line B,CFU,120000,3,102
+H2O2,Treatment 03,8 mM,Line B,cells_mL,5333333.333,45,147
+H2O2,Treatment 03,8 mM,Line C,CFU,3.00E+05,3,102
+H2O2,Treatment 03,8 mM,Line C,cells_mL,5333333.333,45,147
+Control,Treatment 04,w/o ROS 0 mM,Line D,cells_i,1.00E+06,1,148
+Control,Treatment 04,w/o ROS 0 mM,Line E,cells_i,1.00E+06,1,148
+Control,Treatment 04,w/o ROS 0 mM,Line F,cells_i,1.00E+06,1,148
+H2O2,Treatment 04,8 mM,Line A,cells_i,1.00E+06,1,148
+H2O2,Treatment 04,8 mM,Line B,cells_i,1.00E+06,1,148
+H2O2,Treatment 04,8 mM,Line C,cells_i,1.00E+06,1,148
+Control,Treatment 04,w/o ROS 0 mM,Line D,CFU,1870000,3,151
+Control,Treatment 04,w/o ROS 0 mM,Line D,cells_mL,1.80E+07,45,196
+Control,Treatment 04,w/o ROS 0 mM,Line E,CFU,1950000,3,151
+Control,Treatment 04,w/o ROS 0 mM,Line E,cells_mL,14666666.67,45,196
+Control,Treatment 04,w/o ROS 0 mM,Line F,CFU,1920000,3,151
+Control,Treatment 04,w/o ROS 0 mM,Line F,cells_mL,2.20E+07,45,196
+H2O2,Treatment 04,8 mM,Line A,CFU,360000,3,151
+H2O2,Treatment 04,8 mM,Line A,cells_mL,1.50E+07,45,196
+H2O2,Treatment 04,8 mM,Line B,CFU,180000,3,151
+H2O2,Treatment 04,8 mM,Line B,cells_mL,15333333.33,45,196
+H2O2,Treatment 04,8 mM,Line C,CFU,420000,3,151
+H2O2,Treatment 04,8 mM,Line C,cells_mL,1.20E+07,45,196
+Control,Treatment 05,w/o ROS 0 mM,Line D,cells_i,1.00E+06,1,197
+Control,Treatment 05,w/o ROS 0 mM,Line E,cells_i,1.00E+06,1,197
+Control,Treatment 05,w/o ROS 0 mM,Line F,cells_i,1.00E+06,1,197
+H2O2,Treatment 05,11 mM,Line A,cells_i,1.00E+06,1,197
+H2O2,Treatment 05,11 mM,Line B,cells_i,1.00E+06,1,197
+H2O2,Treatment 05,11 mM,Line C,cells_i,1.00E+06,1,197
+Control,Treatment 05,w/o ROS 0 mM,Line D,CFU,1830000,3,200
+Control,Treatment 05,w/o ROS 0 mM,Line D,cells_mL,2.00E+07,45,245
+Control,Treatment 05,w/o ROS 0 mM,Line E,CFU,1900000,3,200
+Control,Treatment 05,w/o ROS 0 mM,Line E,cells_mL,1.80E+07,45,245
+Control,Treatment 05,w/o ROS 0 mM,Line F,CFU,2040000,3,200
+Control,Treatment 05,w/o ROS 0 mM,Line F,cells_mL,2.10E+07,45,245
+H2O2,Treatment 05,11 mM,Line A,CFU,9.00E+05,3,200
+H2O2,Treatment 05,11 mM,Line A,cells_mL,16666666.67,45,245
+H2O2,Treatment 05,11 mM,Line B,CFU,630000,3,200
+H2O2,Treatment 05,11 mM,Line B,cells_mL,12333333.33,45,245
+H2O2,Treatment 05,11 mM,Line C,CFU,720000,3,200
+H2O2,Treatment 05,11 mM,Line C,cells_mL,1.50E+07,45,245
+Control,Treatment 06,w/o ROS 0 mM,Line D,cells_i,1.00E+06,1,246
+Control,Treatment 06,w/o ROS 0 mM,Line E,cells_i,1.00E+06,1,246
+Control,Treatment 06,w/o ROS 0 mM,Line F,cells_i,1.00E+06,1,246
+H2O2,Treatment 06,11 mM,Line A,cells_i,1.00E+06,1,246
+H2O2,Treatment 06,11 mM,Line B,cells_i,1.00E+06,1,246
+H2O2,Treatment 06,11 mM,Line C,cells_i,1.00E+06,1,246
+Control,Treatment 06,w/o ROS 0 mM,Line D,CFU,1830000,3,249
+Control,Treatment 06,w/o ROS 0 mM,Line D,cells_mL,2.10E+07,45,294
+Control,Treatment 06,w/o ROS 0 mM,Line E,CFU,1490000,3,249
+Control,Treatment 06,w/o ROS 0 mM,Line E,cells_mL,19666666.67,45,294
+Control,Treatment 06,w/o ROS 0 mM,Line F,CFU,1690000,3,249
+Control,Treatment 06,w/o ROS 0 mM,Line F,cells_mL,1.80E+07,45,294
+H2O2,Treatment 06,11 mM,Line A,CFU,330000,3,249
+H2O2,Treatment 06,11 mM,Line A,cells_mL,14333333.33,45,294
+H2O2,Treatment 06,11 mM,Line B,CFU,250000,3,249
+H2O2,Treatment 06,11 mM,Line B,cells_mL,20666666.67,45,294
+H2O2,Treatment 06,11 mM,Line C,CFU,430000,3,249
+H2O2,Treatment 06,11 mM,Line C,cells_mL,16333333.33,45,294
+Control,Treatment 07,w/o ROS 0 mM,Line D,cells_i,1.00E+06,1,295
+Control,Treatment 07,w/o ROS 0 mM,Line E,cells_i,1.00E+06,1,295
+Control,Treatment 07,w/o ROS 0 mM,Line F,cells_i,1.00E+06,1,295
+H2O2,Treatment 07,14 mM,Line A,cells_i,1.00E+06,1,295
+H2O2,Treatment 07,14 mM,Line B,cells_i,1.00E+06,1,295
+H2O2,Treatment 07,14 mM,Line C,cells_i,1.00E+06,1,295
+Control,Treatment 07,w/o ROS 0 mM,Line D,CFU,1530000,3,298
+Control,Treatment 07,w/o ROS 0 mM,Line D,cells_mL,19666666.67,45,343
+Control,Treatment 07,w/o ROS 0 mM,Line E,CFU,1690000,3,298
+Control,Treatment 07,w/o ROS 0 mM,Line E,cells_mL,17333333.33,45,343
+Control,Treatment 07,w/o ROS 0 mM,Line F,CFU,1880000,3,298
+Control,Treatment 07,w/o ROS 0 mM,Line F,cells_mL,11333333.33,45,343
+H2O2,Treatment 07,14 mM,Line A,CFU,430000,3,298
+H2O2,Treatment 07,14 mM,Line A,cells_mL,20333333.33,45,343
+H2O2,Treatment 07,14 mM,Line B,CFU,170000,3,298
+H2O2,Treatment 07,14 mM,Line B,cells_mL,18666666.67,45,343
+H2O2,Treatment 07,14 mM,Line C,CFU,640000,3,298
+H2O2,Treatment 07,14 mM,Line C,cells_mL,23666666.67,45,343
+Control,Treatment 08,w/o ROS 0 mM,Line D,cells_i,1.00E+06,1,344
+Control,Treatment 08,w/o ROS 0 mM,Line E,cells_i,1.00E+06,1,344
+Control,Treatment 08,w/o ROS 0 mM,Line F,cells_i,1.00E+06,1,344
+H2O2,Treatment 08,14 mM,Line A,cells_i,1.00E+06,1,344
+H2O2,Treatment 08,14 mM,Line B,cells_i,1.00E+06,1,344
+H2O2,Treatment 08,14 mM,Line C,cells_i,1.00E+06,1,344
+Control,Treatment 08,w/o ROS 0 mM,Line D,CFU,2080000,3,347
+Control,Treatment 08,w/o ROS 0 mM,Line D,cells_mL,16666666.67,45,392
+Control,Treatment 08,w/o ROS 0 mM,Line E,CFU,1710000,3,347
+Control,Treatment 08,w/o ROS 0 mM,Line E,cells_mL,1.50E+07,45,392
+Control,Treatment 08,w/o ROS 0 mM,Line F,CFU,1860000,3,347
+Control,Treatment 08,w/o ROS 0 mM,Line F,cells_mL,18666666.67,45,392
+H2O2,Treatment 08,14 mM,Line A,CFU,330000,3,347
+H2O2,Treatment 08,14 mM,Line A,cells_mL,2.40E+07,45,392
+H2O2,Treatment 08,14 mM,Line B,CFU,490000,3,347
+H2O2,Treatment 08,14 mM,Line B,cells_mL,27666666.67,45,392
+H2O2,Treatment 08,14 mM,Line C,CFU,390000,3,347
+H2O2,Treatment 08,14 mM,Line C,cells_mL,2.10E+07,45,392
+Control,Treatment 09,w/o ROS 0 mM,Line D,cells_i,1.00E+06,1,393
+Control,Treatment 09,w/o ROS 0 mM,Line E,cells_i,1.00E+06,1,393
+Control,Treatment 09,w/o ROS 0 mM,Line F,cells_i,1.00E+06,1,393
+H2O2,Treatment 09,17 mM,Line A,cells_i,1.00E+06,1,393
+H2O2,Treatment 09,17 mM,Line B,cells_i,1.00E+06,1,393
+H2O2,Treatment 09,17 mM,Line C,cells_i,1.00E+06,1,393
+Control,Treatment 09,w/o ROS 0 mM,Line D,CFU,1750000,3,396
+Control,Treatment 09,w/o ROS 0 mM,Line D,cells_mL,24333333.33,45,441
+Control,Treatment 09,w/o ROS 0 mM,Line E,CFU,1790000,3,396
+Control,Treatment 09,w/o ROS 0 mM,Line E,cells_mL,20666666.67,45,441
+Control,Treatment 09,w/o ROS 0 mM,Line F,CFU,1850000,3,396
+Control,Treatment 09,w/o ROS 0 mM,Line F,cells_mL,19666666.67,45,441
+H2O2,Treatment 09,17 mM,Line A,CFU,890000,3,396
+H2O2,Treatment 09,17 mM,Line A,cells_mL,2.30E+07,45,441
+H2O2,Treatment 09,17 mM,Line B,CFU,9.00E+05,3,396
+H2O2,Treatment 09,17 mM,Line B,cells_mL,31333333.33,45,441
+H2O2,Treatment 09,17 mM,Line C,CFU,750000,3,396
+H2O2,Treatment 09,17 mM,Line C,cells_mL,3.00E+07,45,441
+Control,Treatment 10,w/o ROS 0 mM,Line D,cells_i,1.00E+06,1,442
+Control,Treatment 10,w/o ROS 0 mM,Line E,cells_i,1.00E+06,1,442
+Control,Treatment 10,w/o ROS 0 mM,Line F,cells_i,1.00E+06,1,442
+H2O2,Treatment 10,17 mM,Line A,cells_i,1.00E+06,1,442
+H2O2,Treatment 10,17 mM,Line B,cells_i,1.00E+06,1,442
+H2O2,Treatment 10,17 mM,Line C,cells_i,1.00E+06,1,442
+Control,Treatment 10,w/o ROS 0 mM,Line D,CFU,1830000,3,445
+Control,Treatment 10,w/o ROS 0 mM,Line D,cells_mL,37666666.67,45,490
+Control,Treatment 10,w/o ROS 0 mM,Line E,CFU,1670000,3,445
+Control,Treatment 10,w/o ROS 0 mM,Line E,cells_mL,33666666.67,45,490
+Control,Treatment 10,w/o ROS 0 mM,Line F,CFU,2090000,3,445
+Control,Treatment 10,w/o ROS 0 mM,Line F,cells_mL,19333333.33,45,490
+H2O2,Treatment 10,17 mM,Line A,CFU,640000,3,445
+H2O2,Treatment 10,17 mM,Line A,cells_mL,23333333.33,45,490
+H2O2,Treatment 10,17 mM,Line B,CFU,860000,3,445
+H2O2,Treatment 10,17 mM,Line B,cells_mL,32666666.67,45,490
+H2O2,Treatment 10,17 mM,Line C,CFU,520000,3,445
+H2O2,Treatment 10,17 mM,Line C,cells_mL,28666666.67,45,490
+Control,Treatment 11,w/o ROS 0 mM,Line D,cells_i,1.00E+06,1,491
+Control,Treatment 11,w/o ROS 0 mM,Line E,cells_i,1.00E+06,1,491
+Control,Treatment 11,w/o ROS 0 mM,Line F,cells_i,1.00E+06,1,491
+H2O2,Treatment 11,20 mM,Line A,cells_i,1.00E+06,1,491
+H2O2,Treatment 11,20 mM,Line B,cells_i,1.00E+06,1,491
+H2O2,Treatment 11,20 mM,Line C,cells_i,1.00E+06,1,491
+Control,Treatment 11,w/o ROS 0 mM,Line D,CFU,1830000,3,494
+Control,Treatment 11,w/o ROS 0 mM,Line D,cells_mL,23666666.67,45,539
+Control,Treatment 11,w/o ROS 0 mM,Line E,CFU,1860000,3,494
+Control,Treatment 11,w/o ROS 0 mM,Line E,cells_mL,23333333.33,45,539
+Control,Treatment 11,w/o ROS 0 mM,Line F,CFU,1940000,3,494
+Control,Treatment 11,w/o ROS 0 mM,Line F,cells_mL,27666666.67,45,539
+H2O2,Treatment 11,20 mM,Line A,CFU,960000,3,494
+H2O2,Treatment 11,20 mM,Line A,cells_mL,2.30E+07,45,539
+H2O2,Treatment 11,20 mM,Line B,CFU,920000,3,494
+H2O2,Treatment 11,20 mM,Line B,cells_mL,22666666.67,45,539
+H2O2,Treatment 11,20 mM,Line C,CFU,7.00E+05,3,494
+H2O2,Treatment 11,20 mM,Line C,cells_mL,2.60E+07,45,539
+Control,Treatment 12,w/o ROS 0 mM,Line D,cells_i,1.00E+06,1,540
+Control,Treatment 12,w/o ROS 0 mM,Line E,cells_i,1.00E+06,1,540
+Control,Treatment 12,w/o ROS 0 mM,Line F,cells_i,1.00E+06,1,540
+H2O2,Treatment 12,20 mM,Line A,cells_i,1.00E+06,1,540
+H2O2,Treatment 12,20 mM,Line B,cells_i,1.00E+06,1,540
+H2O2,Treatment 12,20 mM,Line C,cells_i,1.00E+06,1,540
+Control,Treatment 12,w/o ROS 0 mM,Line D,CFU,1810000,3,543
+Control,Treatment 12,w/o ROS 0 mM,Line D,cells_mL,31333333.33,45,588
+Control,Treatment 12,w/o ROS 0 mM,Line E,CFU,1720000,3,543
+Control,Treatment 12,w/o ROS 0 mM,Line E,cells_mL,20666666.67,45,588
+Control,Treatment 12,w/o ROS 0 mM,Line F,CFU,1930000,3,543
+Control,Treatment 12,w/o ROS 0 mM,Line F,cells_mL,23333333.33,45,588
+H2O2,Treatment 12,20 mM,Line A,CFU,730000,3,543
+H2O2,Treatment 12,20 mM,Line A,cells_mL,3.30E+07,45,588
+H2O2,Treatment 12,20 mM,Line B,CFU,620000,3,543
+H2O2,Treatment 12,20 mM,Line B,cells_mL,3.80E+07,45,588
+H2O2,Treatment 12,20 mM,Line C,CFU,930000,3,543
+H2O2,Treatment 12,20 mM,Line C,cells_mL,4.40E+07,45,588
+Control,Treatment 13,w/o ROS 0 mM,Line D,cells_i,1.00E+06,1,589
+Control,Treatment 13,w/o ROS 0 mM,Line E,cells_i,1.00E+06,1,589
+Control,Treatment 13,w/o ROS 0 mM,Line F,cells_i,1.00E+06,1,589
+H2O2,Treatment 13,30 mM,Line A,cells_i,1.00E+06,1,589
+H2O2,Treatment 13,30 mM,Line B,cells_i,1.00E+06,1,589
+H2O2,Treatment 13,30 mM,Line C,cells_i,1.00E+06,1,589
+Control,Treatment 13,w/o ROS 0 mM,Line D,CFU,1930000,3,592
+Control,Treatment 13,w/o ROS 0 mM,Line D,cells_mL,3.60E+07,45,637
+Control,Treatment 13,w/o ROS 0 mM,Line E,CFU,1900000,3,592
+Control,Treatment 13,w/o ROS 0 mM,Line E,cells_mL,34666666.67,45,637
+Control,Treatment 13,w/o ROS 0 mM,Line F,CFU,1780000,3,592
+Control,Treatment 13,w/o ROS 0 mM,Line F,cells_mL,3.20E+07,45,637
+H2O2,Treatment 13,30 mM,Line A,CFU,2.00E+05,3,592
+H2O2,Treatment 13,30 mM,Line A,cells_mL,5.00E+07,45,637
+H2O2,Treatment 13,30 mM,Line B,CFU,260000,3,592
+H2O2,Treatment 13,30 mM,Line B,cells_mL,5.30E+07,45,637
+H2O2,Treatment 13,30 mM,Line C,CFU,230000,3,592
+H2O2,Treatment 13,30 mM,Line C,cells_mL,4.70E+07,45,637
+Control,Treatment 14,w/o ROS 0 mM,Line D,cells_i,1.00E+06,1,638
+Control,Treatment 14,w/o ROS 0 mM,Line E,cells_i,1.00E+06,1,638
+Control,Treatment 14,w/o ROS 0 mM,Line F,cells_i,1.00E+06,1,638
+H2O2,Treatment 14,30 mM,Line A,cells_i,1.00E+06,1,638
+H2O2,Treatment 14,30 mM,Line B,cells_i,1.00E+06,1,638
+H2O2,Treatment 14,30 mM,Line C,cells_i,1.00E+06,1,638
+Control,Treatment 14,w/o ROS 0 mM,Line D,CFU,2120000,3,641
+Control,Treatment 14,w/o ROS 0 mM,Line D,cells_mL,3.30E+07,45,686
+Control,Treatment 14,w/o ROS 0 mM,Line E,CFU,1960000,3,641
+Control,Treatment 14,w/o ROS 0 mM,Line E,cells_mL,4.50E+07,45,686
+Control,Treatment 14,w/o ROS 0 mM,Line F,CFU,2320000,3,641
+Control,Treatment 14,w/o ROS 0 mM,Line F,cells_mL,4.30E+07,45,686
+H2O2,Treatment 14,30 mM,Line A,CFU,3.00E+05,3,641
+H2O2,Treatment 14,30 mM,Line A,cells_mL,6.60E+07,45,686
+H2O2,Treatment 14,30 mM,Line B,CFU,310000,3,641
+H2O2,Treatment 14,30 mM,Line B,cells_mL,5.30E+07,45,686
+H2O2,Treatment 14,30 mM,Line C,CFU,290000,3,641
+H2O2,Treatment 14,30 mM,Line C,cells_mL,5.50E+07,45,686
+Control,Treatment 15,w/o ROS 0 mM,Line D,cells_i,1.00E+06,1,687
+Control,Treatment 15,w/o ROS 0 mM,Line E,cells_i,1.00E+06,1,687
+Control,Treatment 15,w/o ROS 0 mM,Line F,cells_i,1.00E+06,1,687
+H2O2,Treatment 15,40 mM,Line A,cells_i,1.00E+06,1,687
+H2O2,Treatment 15,40 mM,Line B,cells_i,1.00E+06,1,687
+H2O2,Treatment 15,40 mM,Line C,cells_i,1.00E+06,1,687
+Control,Treatment 15,w/o ROS 0 mM,Line D,CFU,1690000,3,690
+Control,Treatment 15,w/o ROS 0 mM,Line D,cells_mL,4.20E+07,45,735
+Control,Treatment 15,w/o ROS 0 mM,Line E,CFU,1533000,3,690
+Control,Treatment 15,w/o ROS 0 mM,Line E,cells_mL,5.60E+07,45,735
+Control,Treatment 15,w/o ROS 0 mM,Line F,CFU,1800000,3,690
+Control,Treatment 15,w/o ROS 0 mM,Line F,cells_mL,4.80E+07,45,735
+H2O2,Treatment 15,40 mM,Line A,CFU,3.00E+05,3,690
+H2O2,Treatment 15,40 mM,Line A,cells_mL,5.00E+07,45,735
+H2O2,Treatment 15,40 mM,Line B,CFU,310000,3,690
+H2O2,Treatment 15,40 mM,Line B,cells_mL,4.70E+07,45,735
+H2O2,Treatment 15,40 mM,Line C,CFU,290000,3,690
+H2O2,Treatment 15,40 mM,Line C,cells_mL,3.90E+07,45,735
+Control,Treatment 16,w/o ROS 0 mM,Line D,cells_i,1.00E+06,1,736
+Control,Treatment 16,w/o ROS 0 mM,Line E,cells_i,1.00E+06,1,736
+Control,Treatment 16,w/o ROS 0 mM,Line F,cells_i,1.00E+06,1,736
+H2O2,Treatment 16,40 mM,Line A,cells_i,1.00E+06,1,736
+H2O2,Treatment 16,40 mM,Line B,cells_i,1.00E+06,1,736
+H2O2,Treatment 16,40 mM,Line C,cells_i,1.00E+06,1,736
+Control,Treatment 16,w/o ROS 0 mM,Line D,CFU,1800000,3,739
+Control,Treatment 16,w/o ROS 0 mM,Line D,cells_mL,4.30E+07,45,784
+Control,Treatment 16,w/o ROS 0 mM,Line E,CFU,1860000,3,739
+Control,Treatment 16,w/o ROS 0 mM,Line E,cells_mL,3.50E+07,45,784
+Control,Treatment 16,w/o ROS 0 mM,Line F,CFU,1730000,3,739
+Control,Treatment 16,w/o ROS 0 mM,Line F,cells_mL,4.60E+07,45,784
+H2O2,Treatment 16,40 mM,Line A,CFU,570000,3,739
+H2O2,Treatment 16,40 mM,Line A,cells_mL,6.00E+07,45,784
+H2O2,Treatment 16,40 mM,Line B,CFU,640000,3,739
+H2O2,Treatment 16,40 mM,Line B,cells_mL,5.00E+07,45,784
+H2O2,Treatment 16,40 mM,Line C,CFU,530000,3,739
+H2O2,Treatment 16,40 mM,Line C,cells_mL,6.70E+07,45,784
+Control,Treatment 17,w/o ROS 0 mM,Line D,cells_i,1.00E+06,1,785
+Control,Treatment 17,w/o ROS 0 mM,Line E,cells_i,1.00E+06,1,785
+Control,Treatment 17,w/o ROS 0 mM,Line F,cells_i,1.00E+06,1,785
+H2O2,Treatment 17,50 mM,Line A,cells_i,1.00E+06,1,785
+H2O2,Treatment 17,50 mM,Line B,cells_i,1.00E+06,1,785
+H2O2,Treatment 17,50 mM,Line C,cells_i,1.00E+06,1,785
+Control,Treatment 17,w/o ROS 0 mM,Line D,CFU,1940000,3,788
+Control,Treatment 17,w/o ROS 0 mM,Line D,cells_mL,5.20E+07,45,833
+Control,Treatment 17,w/o ROS 0 mM,Line E,CFU,2040000,3,788
+Control,Treatment 17,w/o ROS 0 mM,Line E,cells_mL,5.90E+07,45,833
+Control,Treatment 17,w/o ROS 0 mM,Line F,CFU,1670000,3,788
+Control,Treatment 17,w/o ROS 0 mM,Line F,cells_mL,6.20E+07,45,833
+H2O2,Treatment 17,50 mM,Line A,CFU,460000,3,788
+H2O2,Treatment 17,50 mM,Line A,cells_mL,7.70E+07,45,833
+H2O2,Treatment 17,50 mM,Line B,CFU,230000,3,788
+H2O2,Treatment 17,50 mM,Line B,cells_mL,6.80E+07,45,833
+H2O2,Treatment 17,50 mM,Line C,CFU,240000,3,788
+H2O2,Treatment 17,50 mM,Line C,cells_mL,5.50E+07,45,833
+Control,Treatment 18,w/o ROS 0 mM,Line D,cells_i,1.00E+06,1,834
+Control,Treatment 18,w/o ROS 0 mM,Line E,cells_i,1.00E+06,1,834
+Control,Treatment 18,w/o ROS 0 mM,Line F,cells_i,1.00E+06,1,834
+H2O2,Treatment 18,50 mM,Line A,cells_i,1.00E+06,1,834
+H2O2,Treatment 18,50 mM,Line B,cells_i,1.00E+06,1,834
+H2O2,Treatment 18,50 mM,Line C,cells_i,1.00E+06,1,834
+Control,Treatment 18,w/o ROS 0 mM,Line D,CFU,1860000,3,837
+Control,Treatment 18,w/o ROS 0 mM,Line D,cells_mL,6.80E+07,45,882
+Control,Treatment 18,w/o ROS 0 mM,Line E,CFU,1810000,3,837
+Control,Treatment 18,w/o ROS 0 mM,Line E,cells_mL,7.70E+07,45,882
+Control,Treatment 18,w/o ROS 0 mM,Line F,CFU,1780000,3,837
+Control,Treatment 18,w/o ROS 0 mM,Line F,cells_mL,7.40E+07,45,882
+H2O2,Treatment 18,50 mM,Line A,CFU,190000,3,837
+H2O2,Treatment 18,50 mM,Line A,cells_mL,7.60E+07,45,882
+H2O2,Treatment 18,50 mM,Line B,CFU,130000,3,837
+H2O2,Treatment 18,50 mM,Line B,cells_mL,6.70E+07,45,882
+H2O2,Treatment 18,50 mM,Line C,CFU,30000,3,837
+H2O2,Treatment 18,50 mM,Line C,cells_mL,1400000,45,882
+Control,Treatment 19,w/o ROS 0 mM,Line D,cells_i,1.00E+06,1,883
+Control,Treatment 19,w/o ROS 0 mM,Line E,cells_i,1.00E+06,1,883
+Control,Treatment 19,w/o ROS 0 mM,Line F,cells_i,1.00E+06,1,883
+H2O2,Treatment 19,60 mM,Line A,cells_i,1.00E+06,1,883
+H2O2,Treatment 19,60 mM,Line B,cells_i,1.00E+06,1,883
+H2O2,Treatment 19,60 mM,Line C,cells_i,1.00E+06,1,883
+Control,Treatment 19,w/o ROS 0 mM,Line D,CFU,1700000,3,886
+Control,Treatment 19,w/o ROS 0 mM,Line D,cells_mL,5.20E+07,45,931
+Control,Treatment 19,w/o ROS 0 mM,Line E,CFU,1810000,3,886
+Control,Treatment 19,w/o ROS 0 mM,Line E,cells_mL,4.40E+07,45,931
+Control,Treatment 19,w/o ROS 0 mM,Line F,CFU,1930000,3,886
+Control,Treatment 19,w/o ROS 0 mM,Line F,cells_mL,8.50E+07,45,931
+H2O2,Treatment 19,60 mM,Line A,CFU,250000,3,886
+H2O2,Treatment 19,60 mM,Line A,cells_mL,4.60E+07,45,931
+H2O2,Treatment 19,60 mM,Line B,CFU,170000,3,886
+H2O2,Treatment 19,60 mM,Line B,cells_mL,4.40E+07,45,931
+H2O2,Treatment 19,60 mM,Line C,CFU,1.00E+05,3,886
+H2O2,Treatment 19,60 mM,Line C,cells_mL,2.50E+07,45,931
+Control,Treatment 20,w/o ROS 0 mM,Line D,cells_i,1.00E+06,1,932
+Control,Treatment 20,w/o ROS 0 mM,Line E,cells_i,1.00E+06,1,932
+Control,Treatment 20,w/o ROS 0 mM,Line F,cells_i,1.00E+06,1,932
+H2O2,Treatment 20,60 mM,Line A,cells_i,1.00E+06,1,932
+H2O2,Treatment 20,60 mM,Line B,cells_i,1.00E+06,1,932
+H2O2,Treatment 20,60 mM,Line C,cells_i,1.00E+06,1,932
+Control,Treatment 20,w/o ROS 0 mM,Line D,CFU,1720000,3,935
+Control,Treatment 20,w/o ROS 0 mM,Line D,cells_mL,6.70E+07,45,980
+Control,Treatment 20,w/o ROS 0 mM,Line E,CFU,1890000,3,935
+Control,Treatment 20,w/o ROS 0 mM,Line E,cells_mL,5.90E+07,45,980
+Control,Treatment 20,w/o ROS 0 mM,Line F,CFU,1680000,3,935
+Control,Treatment 20,w/o ROS 0 mM,Line F,cells_mL,6.20E+07,45,980
+H2O2,Treatment 20,60 mM,Line A,CFU,360000,3,935
+H2O2,Treatment 20,60 mM,Line A,cells_mL,5.20E+07,45,980
+H2O2,Treatment 20,60 mM,Line B,CFU,280000,3,935
+H2O2,Treatment 20,60 mM,Line B,cells_mL,4.60E+07,45,980
+H2O2,Treatment 20,60 mM,Line C,CFU,110000,3,935
+H2O2,Treatment 20,60 mM,Line C,cells_mL,1.90E+07,45,980
