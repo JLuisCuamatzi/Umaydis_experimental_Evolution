@@ -15,12 +15,13 @@ for (lib in libraries) {
 # clean env
 rm(list = ls())
 
+
 # Set directory
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 
 ## Figure 5.A
-df <- fread("ExpEvol_Resistance_Chr9_Data/InhibitionEachColony.csv")
+df <- fread("F05_ExpEvol_Resistance_Chr9_Data/InhibitionEachColony.csv")
 
 df.col <- df[HaloSize_cm != 0] # remove control plates (cm = 0)
 
@@ -73,16 +74,16 @@ df2plot.dots$Line <- paste("Line ", df2plot.dots$Line, sep = "")
 
 Figure.5A <- df2plot %>% arrange(Strain) %>% mutate(X.Labs = rep(seq(1,5,1), 3) ) %>% 
   ggplot() +
-  geom_col(aes(x = X.Labs, y = HaloAreaMean, fill = Chr9.LA, color = Chr9.LA), 
+  geom_col(aes(x = X.Labs, y = (HaloAreaMean*10), fill = Chr9.LA, color = Chr9.LA), 
            alpha = 0.75, linewidth = 0.15) +
-  geom_point(data = df2plot.dots, aes(x = X.Labs, y = InhibitionArea), 
+  geom_point(data = df2plot.dots, aes(x = X.Labs, y = (InhibitionArea)*10 ), 
              size = 1, alpha = 0.5, color = "black")+
   facet_grid(~Line, scales = "free", space = "free", switch = "both") +
   geom_hline(yintercept = 0)+
   theme_classic() +
-  scale_y_continuous(limits = c(0, 6.5), breaks = seq(0, 6, 1)) +
+  scale_y_continuous(limits = c(0, (6.5*10)), breaks = seq(0, (6*10), (1*10))) +
   labs(x ="Colonies at Generation 200", 
-       y = expression("Area of H"["2"]*"O"["2"]*" Inhibition Halo (cm"^"2"*")")) +
+       y = expression("Zone of Inhibition by H"["2"]*"O"["2"]*" (mm"^"2"*")")) +
   scale_fill_manual(values = c( 
     "white", #1X
     "gray", # 2X
@@ -118,7 +119,7 @@ Figure.5A <- df2plot %>% arrange(Strain) %>% mutate(X.Labs = rep(seq(1,5,1), 3) 
                               title.theme = element_text(size = 7, face = "bold")));Figure.5A
 ## Figure 5.B
 
-df.qpcr <- read_excel(path = "ExpEvol_Resistance_Chr9_Data/UMAG_11067_qPCR.xlsx", sheet = "Fold_Change") # read the file
+df.qpcr <- read_excel(path = "F05_ExpEvol_Resistance_Chr9_Data/UMAG_11067_qPCR.xlsx", sheet = "Fold_Change") # read the file
 df.qpcr <- setDT(df.qpcr) # transform to data table
 
 stat.test <- df.qpcr %>% 
@@ -219,7 +220,7 @@ if ( dir.exists(dirSavePlots) ){
   dir.create(dirSavePlots)
 }
 
-plot.Figure5 <- paste(dirSavePlots, "Figure5_USMA_Paper.png", sep = "/")
+plot.Figure5 <- paste(dirSavePlots, "Figure5_USMA_Paper.svg", sep = "/")
 
 
 ggsave(filename = plot.Figure5, plot = Figure.5,

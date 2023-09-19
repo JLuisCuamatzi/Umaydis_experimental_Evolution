@@ -42,6 +42,8 @@ data.H2O2 <- df[Condition == "H2O2"]
 
 
 
+
+
 #
 plot.H2O2 <- ggplot(data.H2O2, aes(x = cumulative_time, y = Cellular_concentration)) +
   geom_line(aes(colour = Line)) + 
@@ -62,17 +64,20 @@ plot.H2O2 <- ggplot(data.H2O2, aes(x = cumulative_time, y = Cellular_concentrati
   theme_classic() + 
   labs(y = "Cellular concentration (cells/mL)\n", x = "\nTime (h)") + 
   theme(legend.position = "none",
-        strip.text = element_text(size = 14, color = "black"),
-        strip.background = element_blank(),
-        axis.title.x = element_text(face = "bold", size = 14),
+        strip.text = element_text(size = 12, color = "black"),
+        #strip.background = element_blank(),
+        axis.title.x = element_text(face = "bold", size = 12),
         axis.title.y = element_text(face = "bold",
-                                    size = 14),
+                                    size = 12),
         axis.text.x = element_text(color = "black", size = 10, angle = 90, vjust = 0.5),
-        axis.text.y = element_text(color = "black", size = 10))+
+        axis.text.y = element_text(color = "black", size = 10),
+        
+        panel.spacing = unit(0.7, "cm")
+        )+
   scale_shape_manual(values = c(16,2,25)) +
   scale_colour_manual(values = c(color.la, color.lb, color.lc))
 
-
+plot.H2O2
 ## control
 plot.control <- ggplot(data.control, aes(x = cumulative_time, y = Cellular_concentration)) +
   geom_line(colour = "#0070C0") + 
@@ -93,19 +98,22 @@ plot.control <- ggplot(data.control, aes(x = cumulative_time, y = Cellular_conce
   theme_classic() + 
   labs(y = "Cellular concentration (cells/mL)\n", x = "\nTime (h)") + 
   theme(legend.position = "none",
-        strip.text = element_text(size = 14, color = "black"),
-        strip.background = element_blank(),
-        axis.title.x = element_text(face = "bold", size = 14),
+        strip.text = element_text(size = 12, color = "black"),
+        #strip.background = element_blank(),
+        axis.title.x = element_text(face = "bold", size = 12),
         axis.title.y = element_text(face = "bold",
-                                    size = 14),
+                                    size = 12),
         axis.text.x = element_text(color = "black", size = 10, angle = 90, vjust = 0.5),
-        axis.text.y = element_text(color = "black", size = 10))+
+        axis.text.y = element_text(color = "black", size = 10),
+        
+        panel.spacing = unit(0.7, "cm")
+  )+
   scale_shape_manual(values = c(16,2,25)) +
   scale_colour_manual(values = c(color.ld, color.le, color.lf))
 
 
 plot.SuppFigure1 <- plot_grid(plot.H2O2,  plot.control, 
-                              ncol = 2, scale = 0.9, align = "h", 
+                              nrow = 2, scale = 0.9, align = "h", 
                               labels = c("A)", "B)"))
 
 
@@ -122,7 +130,7 @@ if ( dir.exists(dirSavePlots) ){
 plot.SuppFig1 <- paste(dirSavePlots, "SupplementaryFigure1_USMA_Paper.svg", sep = "/")
 
 ggsave(filename = plot.SuppFig1, plot = plot.SuppFigure1,
-       width = 12, height = 5, units = "in", dpi = 300)
+       width = 6, height = 8, units = "in", dpi = 300)
 
 rm(list = ls())
 

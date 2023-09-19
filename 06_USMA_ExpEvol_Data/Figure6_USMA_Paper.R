@@ -24,7 +24,7 @@ color.lc <- "#C55A11"
 
 ## plot oexcat
 # Read file with data of CFU in oexUMAG_11067
-df.oex <- fread("oexUMAG_11067/UMAG_11067_oex_Mutant.csv")
+df.oex <- fread("F06_oexUMAG_11067/UMAG_11067_oex_Mutant.csv")
 
 df.oex.mean <- df.oex %>% 
   group_by(Strain, H2O2) %>% 

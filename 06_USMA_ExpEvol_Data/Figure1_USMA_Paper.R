@@ -19,7 +19,7 @@ rm(list = ls())
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 # Read data of CFU
-df <- fread("ExpEvol_CFU_Data/Umaydis_ExpEvol_GrowthData.csv")
+df <- fread("F01_ExpEvol_CFU_Data/Umaydis_ExpEvol_GrowthData.csv")
 
 # keep only CFU
 df <- df[,-5]

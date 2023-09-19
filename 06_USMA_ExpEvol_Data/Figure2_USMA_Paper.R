@@ -18,7 +18,7 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 # read data set
 
-df <- fread("ExpEvol_Inheritance_Data/Halos_ResistanceInheritance_withoutH2O2.csv")
+df <- fread("F02_ExpEvol_Inheritance_Data/Halos_ResistanceInheritance_withoutH2O2.csv")
 
 df$Lineages <- gsub("L", "Line ", df$Lineages)
 
@@ -62,7 +62,7 @@ df %>% dplyr::filter(Strain != "SG200") %>% dplyr::group_by(Group) %>% t_test(cm
 plot.Figure.2 <- 
   df %>% group_by(Day, Strain, Lineages, Group, Strip.Labs, Strip.Labs.2, Fill) %>% 
   summarise(Mean = mean(cm)) %>% 
-  mutate(InhibitionArea = pi*(Mean/2)^2) %>% 
+  mutate(InhibitionArea = (pi*(Mean/2)^2)*10) %>%  # express the inhibition area in mm^2
   ungroup() %>% 
   ggplot()+
   geom_col(aes(x = Strain, y = InhibitionArea,
@@ -78,7 +78,7 @@ plot.Figure.2 <-
   
   labs(
     #x = "Colonies", 
-       y = expression("Area of H"["2"]*"O"["2"]*" Inhibition Halo (cm"^"2"*")")) +
+       y = expression("Zone of Inhibition by H"["2"]*"O"["2"]*" (mm"^"2"*")")) +
   #facet_grid(~ as.factor(Strip.Labs) + as.factor(Strip.Labs.2 ),
   facet_grid(~ as.factor(Strip.Labs) + Strip.Labs.2,
              scales = "free", space = "free", switch = "both")+
@@ -97,11 +97,12 @@ plot.Figure.2 <-
                               "U20.L1.C1" = "1", "U20.L1.C2" = "2",
                               "U20.L2.C1" = "1", "U20.L2.C2" = "2",
                               "U20.L3.C1" = "1", "U20.L3.C2" = "2" )) +
-  scale_y_continuous(limits = c(0, 13), breaks = seq(0, 13, 1)) +
+  scale_y_continuous(limits = c(0, 140), breaks = seq(0, 120, 20)) +
   
   theme(
     # legend aes
-    legend.position = "top",
+    legend.position = c(0.5, .9),
+    legend.direction = "horizontal",
     legend.title = element_text(colour="white"),
     # 
     axis.line.x = element_blank(),
@@ -126,7 +127,7 @@ plot.Figure.2 <-
          ); plot.Figure.2
 
 ## save the plot
-setwd("../")
+
 dirSavePlots <- "Figures"
 
 if ( dir.exists(dirSavePlots) ){
@@ -139,12 +140,8 @@ if ( dir.exists(dirSavePlots) ){
 
 file.Figure.2 <- paste(dirSavePlots, "Figure2_USMA_Paper.New.svg", sep = "/")
 
-if (file.exists(file.Figure.2)){
-  print("Figure Already Exists!")
-} else {
-  ggsave(filename = file.Figure.2, plot = plot.Figure.2,
-         width = 25, height = 12, dpi = 300, units = "cm")
-}
+ggsave(filename = file.Figure.2, plot = plot.Figure.2,
+       width = 25, height = 12, dpi = 300, units = "cm")
 
 
 rm(list = ls())
