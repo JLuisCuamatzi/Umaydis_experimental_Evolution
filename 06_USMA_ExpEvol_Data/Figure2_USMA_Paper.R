@@ -35,13 +35,13 @@ df <- df %>% mutate(Fill =
                 case_when(Day == "1 day" & Strain == "SG200" ~ "SG200",
                           Day == "7 day" & Strain == "SG200" ~ "SG200 + 35 Gen.",
                           Day == "1 day" & Strain != "SG200" ~ "200 Generations",
-                          Day == "7 day" & Strain != "SG200" ~ "235 Generations"))
+                          Day == "7 day" & Strain != "SG200" ~ "200 + 35 Generations"))
 
 
 #levels(factor(df$Fill))
 
 df$Fill <- factor(df$Fill, levels = c("SG200", "SG200 + 35 Gen.",
-                                      "200 Generations", "235 Generations"))
+                                      "200 Generations", "200 + 35 Generations"))
 
 #df
 #df <- df %>% mutate(Strip.Labs.2 =  if_else(Strip.Labs %in% c("Line B", "Line E"), "Exposed", "")) 
@@ -58,27 +58,34 @@ df <- df %>% mutate(Strip.Labs.2 = case_when(
 
 df %>% dplyr::filter(Strain != "SG200") %>% dplyr::group_by(Group) %>% t_test(cm ~ Day, paired = T)
 
+mean.sg200 <- df %>% filter(Strain == "SG200") %>% 
+  reframe(MeanAreaSG200 = mean((pi*(cm/2)^2)*10 ))
+
+
+
 #plot.Figure.2 <- df %>% group_by(Day, Strain, Lineages, Group, Strip.Labs, Fill) %>% 
 plot.Figure.2 <- 
   df %>% group_by(Day, Strain, Lineages, Group, Strip.Labs, Strip.Labs.2, Fill) %>% 
   summarise(Mean = mean(cm)) %>% 
   mutate(InhibitionArea = (pi*(Mean/2)^2)*10) %>%  # express the inhibition area in mm^2
   ungroup() %>% 
+  filter(Strain != "SG200") %>% 
   ggplot()+
   geom_col(aes(x = Strain, y = InhibitionArea,
                fill = Fill, linetype = Fill, color = Fill), 
            position = position_dodge(width = 0.80), 
            alpha = 0.8, width = 0.80, linewidth = 0.30) +
+  geom_hline(aes(yintercept = mean.sg200$MeanAreaSG200), color = "red", linetype = "dashed")+
   
-  scale_fill_manual(values = c("gray90", "gray90", "gray60", "black")) +
+  scale_fill_manual(values = c("gray60", "black")) +
   
-  scale_color_manual(values = c("black", "black","gray60", "black")) +
+  scale_color_manual(values = c("gray60", "black")) +
   
-  scale_linetype_manual(values = c("solid", "dotted", "blank", "blank"))+
+  scale_linetype_manual(values = c( "blank", "blank"))+
   
   labs(
     #x = "Colonies", 
-       y = expression("Zone of Inhibition by H"["2"]*"O"["2"]*" (mm"^"2"*")")) +
+       y = expression("Inhibition Zone by H"["2"]*"O"["2"]*" (mm"^"2"*")")) +
   #facet_grid(~ as.factor(Strip.Labs) + as.factor(Strip.Labs.2 ),
   facet_grid(~ as.factor(Strip.Labs) + Strip.Labs.2,
              scales = "free", space = "free", switch = "both")+
@@ -97,18 +104,18 @@ plot.Figure.2 <-
                               "U20.L1.C1" = "1", "U20.L1.C2" = "2",
                               "U20.L2.C1" = "1", "U20.L2.C2" = "2",
                               "U20.L3.C1" = "1", "U20.L3.C2" = "2" )) +
-  scale_y_continuous(limits = c(0, 140), breaks = seq(0, 120, 20)) +
+  scale_y_continuous(limits = c(0, 125), breaks = seq(0, 120, 20)) +
   
   theme(
     # legend aes
-    legend.position = c(0.5, .9),
+    legend.position = "top",
     legend.direction = "horizontal",
-    legend.title = element_text(colour="white"),
+    legend.title = element_text(colour="black", face = "bold"),
     # 
     axis.line.x = element_blank(),
-    axis.text.x = element_text(vjust = 6, color = "black"),
+    axis.text.x = element_text(vjust = 6, color = "black", size = 9),
     axis.ticks.x = element_blank(),
-    axis.text.y = element_text(color = "black"),
+    axis.text.y = element_text(color = "black", size = 9),
     
     # strip
     strip.background = element_blank(),
@@ -121,9 +128,9 @@ plot.Figure.2 <-
     axis.title.x = element_blank(),
     
     ) +
-  guides(fill = guide_legend(title = "Generations"),
-         color = guide_legend(title = "Generations"),
-         linetype = guide_legend(title = "Generations")
+  guides(fill = guide_legend(title = "Time-points"),
+         color = guide_legend(title = "Time-points"),
+         linetype = guide_legend(title = "Time-points")
          ); plot.Figure.2
 
 ## save the plot
@@ -138,7 +145,7 @@ if ( dir.exists(dirSavePlots) ){
   dir.create(dirSavePlots)
 }
 
-file.Figure.2 <- paste(dirSavePlots, "Figure2_USMA_Paper.New.svg", sep = "/")
+file.Figure.2 <- paste(dirSavePlots, "Figure2_USMA_Paper.svg", sep = "/")
 
 ggsave(filename = file.Figure.2, plot = plot.Figure.2,
        width = 25, height = 12, dpi = 300, units = "cm")

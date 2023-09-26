@@ -23,17 +23,38 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 ## Figure 5.A
 df <- fread("F05_ExpEvol_Resistance_Chr9_Data/InhibitionEachColony.csv")
 
+df <- df %>% 
+  mutate(X.Labs = case_when(
+    endsWith(df$Strain, "SG200") ~ "SG200",
+    endsWith(df$Strain, ".1") ~ "1",
+    endsWith(df$Strain, ".2") ~ "2",
+    endsWith(df$Strain, ".3") ~ "3",
+    endsWith(df$Strain, ".4") ~ "4",
+    endsWith(df$Strain, ".5") ~ "5"))
+
 df.col <- df[HaloSize_cm != 0] # remove control plates (cm = 0)
 
+# indicate levels in strain for plot
 df.col$Strain <- factor(df.col$Strain, 
-                        levels = c("SG200", # indicate levels in strain for plot
+                        levels = c("SG200", 
                                    "U20.LD.1", "U20.LD.2", "U20.LE.1", "U20.LE.2", "U20.LF.1", "U20.LF.2",
                                    "T20.LA.1","T20.LA.2","T20.LA.3", "T20.LA.4","T20.LA.5",
                                    "T20.LB.1","T20.LB.2","T20.LB.3", "T20.LB.4","T20.LB.5",
                                    "T20.LC.1","T20.LC.2","T20.LC.3", "T20.LC.4","T20.LC.5"))
 
-df.col$Line <- factor(df.col$Line, levels = c("Initial", "D", "E", "F", # indicate levels in lines for plot
-                                              "A", "B", "C"))
+# indicate levels in lines for plot
+df.col$Line <- factor(df.col$Line, levels = c("Initial", "D", "E", "F", "A", "B", "C"))
+
+
+
+# SG200
+SG200.Halo <- df.col[Line == "Initial"]
+
+SG200.Halo$ZoneInhibition <- (pi*((SG200.Halo$HaloSize_cm/2)^2)*10)
+
+mean.SG200 <- mean(SG200.Halo$ZoneInhibition)
+sd.SG200 <- sd(SG200.Halo$ZoneInhibition)
+
 
 df.col.2 <- df.col[!Line %in% c("Initial", "D", "E", "F")]
 df.col.2 <- df.col.2 %>% mutate(Chr9State = 
@@ -44,13 +65,15 @@ df.col.2 <- df.col.2 %>% mutate(Chr9State =
                                   )) 
 
 df.col.2$Chr9State <- factor(df.col.2$Chr9State, levels = c("Euploidy", "Aneuploidy"))
-
+df.col.2
 df.col.2.stats <- df.col.2 %>% group_by(Line) %>%  t_test(HaloSize_cm ~ Chr9State) %>% 
   adjust_pvalue() %>% add_significance()
 
 
 df.col.2.stats.2 <- df.col.2 %>% t_test(HaloSize_cm ~ Chr9.LA) %>% adjust_pvalue() %>% add_significance()
+
 df.col.2.stats.2
+
 my_comparisons <- list( c("1X", "2X"), c("1X", "3X"), c("2X", "3X") )
 
 df2plot <- df.col.2 %>% mutate(InhibitionArea = ((pi)*(HaloSize_cm/2)^2)) %>% 
@@ -66,24 +89,26 @@ df2plot$Line <- paste("Line ", df2plot$Line, sep = "")
 df2plot$Chr9.LA <- factor(df2plot$Chr9.LA, levels = c("1X", "2X", "3X"))
 
 # add dots to each bar
-df2plot.dots <- df.col.2 %>% mutate(InhibitionArea = ((pi)*(HaloSize_cm/2)^2),
-                                    X.Labs = rep(rep(c(1:5), each = 3), 3))
+
+df2plot.dots <- df.col.2 %>% mutate(InhibitionArea = ((pi)*(HaloSize_cm/2)^2))
 
 df2plot.dots$Line <- paste("Line ", df2plot.dots$Line, sep = "")
 
+df2plot <- df2plot %>% arrange(Strain) %>% mutate(X.Labs = rep(seq(1,5,1), 3) ) 
 
-Figure.5A <- df2plot %>% arrange(Strain) %>% mutate(X.Labs = rep(seq(1,5,1), 3) ) %>% 
-  ggplot() +
-  geom_col(aes(x = X.Labs, y = (HaloAreaMean*10), fill = Chr9.LA, color = Chr9.LA), 
-           alpha = 0.75, linewidth = 0.15) +
-  geom_point(data = df2plot.dots, aes(x = X.Labs, y = (InhibitionArea)*10 ), 
-             size = 1, alpha = 0.5, color = "black")+
+
+ 
+Figure.5A <- ggplot(data = df2plot) +
+  geom_col( aes(x = X.Labs, y = (HaloAreaMean*10), fill = Chr9.LA, color = Chr9.LA), 
+           alpha = 0.75, linewidth = 0.15)+
+  geom_point(data = df2plot.dots, aes(x = as.numeric(X.Labs), y = (InhibitionArea*10)), color = "black", alpha = 0.5)+
   facet_grid(~Line, scales = "free", space = "free", switch = "both") +
   geom_hline(yintercept = 0)+
   theme_classic() +
-  scale_y_continuous(limits = c(0, (6.5*10)), breaks = seq(0, (6*10), (1*10))) +
+  #scale_y_continuous(limits = c(0, (6.5*10)), breaks = seq(0, (6*10), (1*10))) +
+  scale_y_continuous(limits = c(0, (12*10)), breaks = seq(0, (12*10), (2*10))) +
   labs(x ="Colonies at Generation 200", 
-       y = expression("Zone of Inhibition by H"["2"]*"O"["2"]*" (mm"^"2"*")")) +
+       y = expression("Inhibition Zone by H"["2"]*"O"["2"]*" (mm"^"2"*")")) +
   scale_fill_manual(values = c( 
     "white", #1X
     "gray", # 2X
@@ -95,7 +120,7 @@ Figure.5A <- df2plot %>% arrange(Strain) %>% mutate(X.Labs = rep(seq(1,5,1), 3) 
     "black"  # 3X
   )) +  
   theme(
-    legend.position = c(0.5, 0.92),
+    legend.position = c(0.5, 0.94),
     legend.direction = "horizontal",
     legend.key.size = unit(0.35, "cm"),
     
@@ -104,10 +129,10 @@ Figure.5A <- df2plot %>% arrange(Strain) %>% mutate(X.Labs = rep(seq(1,5,1), 3) 
     axis.title.y = element_text(margin = unit(c(0,5,0,0), "mm")),
     
     axis.line.x = element_blank(),
-    axis.text.x = element_text(vjust = 15, color = "black", size = 10),
+    axis.text.x = element_text(vjust = 15, color = "black", size = 9),
     axis.ticks.x = element_blank(),
     #
-    axis.text.y = element_text(color = "black", size = 10),
+    axis.text.y = element_text(color = "black", size = 9),
     #
     strip.background = element_blank(),
     strip.text = element_text(size = 11, color = "black"),
@@ -116,9 +141,13 @@ Figure.5A <- df2plot %>% arrange(Strain) %>% mutate(X.Labs = rep(seq(1,5,1), 3) 
   guides(fill = guide_legend(title = "Copy Number\nLeft Arm Chr 9",
                              title.theme = element_text(size = 8, face = "bold")),
          color = guide_legend(title = "Copy Number\nLeft Arm Chr 9",
-                              title.theme = element_text(size = 7, face = "bold")));Figure.5A
-## Figure 5.B
+                              title.theme = element_text(size = 7, face = "bold")))+
+  geom_hline(aes(yintercept = mean.SG200), color = "red", linetype = "dotted" );Figure.5A
 
+
+
+
+  ## Figure 5.B
 df.qpcr <- read_excel(path = "F05_ExpEvol_Resistance_Chr9_Data/UMAG_11067_qPCR.xlsx", sheet = "Fold_Change") # read the file
 df.qpcr <- setDT(df.qpcr) # transform to data table
 
@@ -169,8 +198,8 @@ Figure.5B <- ggplot()+
   theme_classic()+
   scale_y_continuous(limits = c(0, 5), breaks = seq(0,5, 1))+
   scale_x_discrete(labels = c("SG200" = "Initial \nStrain", 
-                              "T20.LB.1" = "T20. \nLB.1",
-                              "T20.LC.1" = "T20. \nLC.1"))+
+                              "T20.LB.1" = "1 \nLine B",
+                              "T20.LC.1" = "1 \nLine C"))+
   labs(x = "Strain", y = "Fold Change in Catalase Gene Expression")+
   ## colors
   scale_fill_manual(values = c( 
@@ -196,7 +225,7 @@ Figure.5B <- ggplot()+
         
         axis.line.x = element_blank(),
         axis.ticks.x = element_blank(),
-        axis.text.x = element_text(vjust = 5, color = "black", size = 10),
+        axis.text.x = element_text(vjust = 5, color = "black", size = 9),
         
         axis.title = element_text(size = 12, color = "black"),
         #axis.text.x = element_blank(),
@@ -204,7 +233,7 @@ Figure.5B <- ggplot()+
         strip.text = element_blank(),
         strip.background = element_blank(),
         
-        axis.text.y = element_text(size = 10, color = "black")) +
+        axis.text.y = element_text(size = 9, color = "black")) +
   stat_pvalue_manual(data = stat.test, label = "label")
 
 

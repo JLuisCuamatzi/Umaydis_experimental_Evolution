@@ -110,6 +110,8 @@ df2plot.1$Strip.Labs <- factor(df2plot.1$Strip.Labs,
 
 df2plot.1$H2O2 <- gsub("([0-9]+)(mM)", "\\1 \\2", df2plot.1$H2O2)
 
+
+
 plot.Figure.1 <- df2plot.1 %>% 
   ggplot() +
   geom_col(aes(x = X.Labs, y = CFU_Ratio_Mean, fill = H2O2, col = H2O2),

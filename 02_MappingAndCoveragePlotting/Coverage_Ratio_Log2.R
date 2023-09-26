@@ -31,6 +31,7 @@ read.NormCov.file <- function(sample){
   
 }
 
+
 # Function to obtained the adjusted normalized coverage:
 
 adjust.coverage <- function(dataset.coverage, threshold.cov){
@@ -110,7 +111,8 @@ plot.heatmap.log2 <- function(data.set, target.chr){
     scale_x_continuous(limits = c(0, max(df.AllSamples2plot.1$window.end)/1000),
                        breaks = c(seq(0, max(df.AllSamples2plot.1$window.end)/1000, 150), 
                                   (max(df.AllSamples2plot.1$window.end)/1000))) +
-    scale_fill_gradient(low="white", high="blue", limits = c(-1,3)) + # GrB  
+    #scale_fill_gradient(low="white", high="blue", limits = c(-1,3)) + # GrB  
+    scale_fill_gradient(low="white", high="blue", limits = c(-1, 1.75), breaks = c(0, 0.5, 1, 1.5)) + # GrB  
     #scale_fill_gradient(low="white", high="blue", limits = c(0,3.5)) + # GrB  original
     theme_classic()+
     labs(x = chr.label, y = "Colonies\n") +
@@ -247,7 +249,15 @@ for (chr in usma.chr){
   
 }
 
+#plot.heatmap.log2(data.set = df.AllSamples2plot, target.chr = "USMA_521_v2_9")
 
+# min log2ratio of USMA_521_v2
+# df.chr9.tmp <- df.AllSamples2plot %>% filter(chr == "USMA_521_v2_9") %>% 
+#   filter(log2ratio != "NA")
+# 
+# min(df.chr9.tmp$log2ratio)
+# max(df.chr9.tmp$log2ratio)
+# 
 ## Checking all the CNV
 # identifiy if in subsequent windows there is a duplication, for this, use as threshold a ratio >= 1.7 (two copies), use the log2 of this value
 
@@ -284,7 +294,81 @@ cnv.del.all.consecutive.windows <- df.AllSamples2plot %>%
 cnv.del.all.consecutive.windows
 
 
+## ___2023/09/25___
+## Update
+## change color palette to a discrete scale
 
+plot.chr9.Figure3.USMA_Paper <- df.AllSamples2plot %>% 
+  mutate(log2Range = case_when(
+    log2ratio < -0.5 ~ "-1 to -0.5", # gray
+    log2ratio < 0 ~ "-0.5 to 0.0", # gray
+    log2ratio < 0.5 ~ "0.0 to 0.5", # gray
+    log2ratio < 1 ~ "0.5 to 1.0", # gray
+    log2ratio < 1.4 ~ "1.0 to 1.5",
+    log2ratio < 2 ~ "1.5 to 2.0",
+    log2ratio < 2.5 ~ "> 2.0"
+    # log2ratio < log2(1.4) ~ "No Change",
+    # log2ratio < log2(2.5) ~ "2 Copy",
+    # log2ratio > log2(2.51) ~ "3 Copy",
+    # TRUE ~ "3 Copy"
+    
+  ) ) %>% 
+  filter(chr == "USMA_521_v2_9") %>% 
+  filter(!is.na(log2ratio)) %>% 
+  ggplot() +
+  geom_tile(aes(x = (window.end/1000), y = y.order, 
+                fill = factor(log2Range, levels = c("-1 to -0.5", 
+                                                    "-0.5 to 0.0",
+                                                    "0.0 to 0.5",
+                                                    "0.5 to 1.0",
+                                                    "1.0 to 1.5",
+                                                    "1.5 to 2.0",
+                                                    "> 2.0")))) +
+  geom_hline(yintercept = c(1.5, 2.5, 3.5, 4.5), color = "white", linewidth = 2)+
+  facet_grid(~Line) +
+  theme_classic()+
+  labs(x = "\nChromosome 9 (kb)", y = "Colony\n") +
+  scale_fill_manual(values = c(
+    "brown1",
+    "gray70", 
+    "gray76" , 
+    "steelblue3", "steelblue4", "dodgerblue4", "navyblue" 
+  ))+
+  theme(
+    # titles
+    plot.title = element_blank(),
+    axis.title.y = element_text(size = 12, color = "black"),
+    axis.title.x = element_text(size = 12, color = "black"),
+    # axis text
+    axis.text.x = element_text(size = 9, color = "black", angle = 90),
+    axis.text.y = element_text(size = 9, color = "black"),
+    # axis ticks
+    axis.ticks.y = element_blank(),
+    
+    #axis.text = element_blank(),
+    #axis.text.y = element_blank(),
+    axis.line = element_blank(),
+    # strip
+    strip.background = element_blank(),
+    strip.text = element_text(size = 12, color = "black"),
+    
+    # lenged aesthetics
+    legend.position = "right",
+    legend.key.size = unit(0.8, "lines"), # Reduce the legend key size
+    legend.key.width = unit(0.8, "lines"), # Reduce key width (if needed)
+    legend.key.height = unit(0.8, "lines"), # Reduce key height (if needed)
+    legend.spacing.x = unit(0.2, "lines"), # Reduce horizontal spacing
+    legend.spacing.y = unit(0.2, "lines")  # Reduce vertical spacing
+    
+    ) +
+  guides(fill = guide_legend(title = expression("log"["2"]*" (Ratio)"),
+                             barwidth = 0.5, ticks = T))
+
+# Export
+Figure3.Paper <- paste0("../Figure3_USMA_Paper.png")
+
+
+ggsave(filename = Figure3.Paper, plot = plot.chr9.Figure3.USMA_Paper, width = 8, height = 2.5, units = "in", dpi = 300)
 
 # end script
 rm(list = ls())
