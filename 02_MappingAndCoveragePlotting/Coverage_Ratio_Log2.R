@@ -2,7 +2,7 @@
 # author: jcuamatzi
 
 # load libraries
-libraries <- c("data.table", "dplyr", "tidyr", "ggplot2", "scales", "cowplot", "stringr")
+libraries <- c("data.table", "dplyr", "tidyr", "ggplot2", "scales", "cowplot", "stringr", "Cairo")
 
 for (lib in libraries) {
   if (!requireNamespace(lib, quietly = TRUE)) {
@@ -298,14 +298,17 @@ cnv.del.all.consecutive.windows
 ## Update
 ## change color palette to a discrete scale
 
+max.chr9 <- max(df.AllSamples2plot %>% filter(chr == "USMA_521_v2_9") %>% 
+  select(window.end) )
+
 plot.chr9.Figure3.USMA_Paper <- df.AllSamples2plot %>% 
   mutate(log2Range = case_when(
-    log2ratio < -0.5 ~ "-1 to -0.5", # gray
-    log2ratio < 0 ~ "-0.5 to 0.0", # gray
-    log2ratio < 0.5 ~ "0.0 to 0.5", # gray
-    log2ratio < 1 ~ "0.5 to 1.0", # gray
-    log2ratio < 1.4 ~ "1.0 to 1.5",
-    log2ratio < 2 ~ "1.5 to 2.0",
+    log2ratio < -0.5 ~ "-1.0 - -0.5", # gray
+    log2ratio < 0 ~ "-0.5 - 0.0", # gray
+    log2ratio < 0.5 ~ "0.0 - 0.5", # gray
+    log2ratio < 1 ~ "0.5 - 1.0", # gray
+    log2ratio < 1.3 ~ "1.0 - 1.5",
+    log2ratio < 2 ~ "1.5 - 2.0",
     log2ratio < 2.5 ~ "> 2.0"
     # log2ratio < log2(1.4) ~ "No Change",
     # log2ratio < log2(2.5) ~ "2 Copy",
@@ -313,26 +316,34 @@ plot.chr9.Figure3.USMA_Paper <- df.AllSamples2plot %>%
     # TRUE ~ "3 Copy"
     
   ) ) %>% 
-  filter(chr == "USMA_521_v2_9") %>% 
-  filter(!is.na(log2ratio)) %>% 
+  filter(chr == "USMA_521_v2_9" & !is.na(log2ratio) & !log2ratio > 2) %>% 
+  #filter(!is.na(log2ratio)) %>% 
   ggplot() +
   geom_tile(aes(x = (window.end/1000), y = y.order, 
-                fill = factor(log2Range, levels = c("-1 to -0.5", 
-                                                    "-0.5 to 0.0",
-                                                    "0.0 to 0.5",
-                                                    "0.5 to 1.0",
-                                                    "1.0 to 1.5",
-                                                    "1.5 to 2.0",
-                                                    "> 2.0")))) +
+                fill = factor(log2Range, levels = c("> 2.0", 
+                                                    "1.5 - 2.0", 
+                                                    "1.0 - 1.5", 
+                                                    "0.5 - 1.0", 
+                                                    "0.0 - 0.5", 
+                                                    "-0.5 - 0.0",
+                                                    "-1.0 - -0.5")))) +
   geom_hline(yintercept = c(1.5, 2.5, 3.5, 4.5), color = "white", linewidth = 2)+
-  facet_grid(~Line) +
+  facet_grid(~ Line, space = "free", scales = "free") +
+  scale_x_continuous(limits = c(0, max.chr9/1000),
+                     breaks = c(seq(0, max.chr9/1000, 150), 
+                                (max.chr9/1000))) +
   theme_classic()+
   labs(x = "\nChromosome 9 (kb)", y = "Colony\n") +
   scale_fill_manual(values = c(
-    "brown1",
-    "gray70", 
-    "gray76" , 
-    "steelblue3", "steelblue4", "dodgerblue4", "navyblue" 
+    "#011E8F",
+    #"darkblue",
+    "#345AE7", 
+    #"steelblue",
+    "#94ABD8", 
+    #"lightblue",
+    "gray86" ,
+    "gray80", 
+    "#D49A7B"
   ))+
   theme(
     # titles
@@ -355,35 +366,23 @@ plot.chr9.Figure3.USMA_Paper <- df.AllSamples2plot %>%
     # lenged aesthetics
     legend.position = "right",
     legend.key.size = unit(0.8, "lines"), # Reduce the legend key size
-    legend.key.width = unit(0.8, "lines"), # Reduce key width (if needed)
-    legend.key.height = unit(0.8, "lines"), # Reduce key height (if needed)
-    legend.spacing.x = unit(0.2, "lines"), # Reduce horizontal spacing
-    legend.spacing.y = unit(0.2, "lines")  # Reduce vertical spacing
+    legend.key.width = unit(0.6, "lines"), # Reduce key width (if needed)
+    legend.key.height = unit(0.6, "lines"), # Reduce key height (if needed)
+    legend.spacing.x = unit(0.3, "lines"), # Reduce horizontal spacing
+    legend.spacing.y = unit(0.3, "lines")  # Reduce vertical spacing
     
     ) +
   guides(fill = guide_legend(title = expression("log"["2"]*" (Ratio)"),
-                             barwidth = 0.5, ticks = T))
+                             barwidth = 0.5, ticks = T)); plot.chr9.Figure3.USMA_Paper
 
-# Export
+# Export the plot to a PNG file using Cairo
 Figure3.Paper <- paste0("../Figure3_USMA_Paper.png")
-
-
-ggsave(filename = Figure3.Paper, plot = plot.chr9.Figure3.USMA_Paper, width = 8, height = 2.5, units = "in", dpi = 300)
+Cairo(file = Figure3.Paper, type = "png", width = 8, height = 2.5, units = "in", dpi = 1000)
+print(plot.chr9.Figure3.USMA_Paper)
+dev.off()
 
 # end script
 rm(list = ls())
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
