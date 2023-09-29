@@ -96,7 +96,9 @@ df2plot.dots$Line <- paste("Line ", df2plot.dots$Line, sep = "")
 
 df2plot <- df2plot %>% arrange(Strain) %>% mutate(X.Labs = rep(seq(1,5,1), 3) ) 
 
-
+df2plot %>% 
+  group_by(Chr9.LA) %>% 
+  reframe(meanHalo = (mean(HaloAreaMean)*10))
  
 Figure.5A <- ggplot(data = df2plot) +
   geom_col( aes(x = X.Labs, y = (HaloAreaMean*10), fill = Chr9.LA, color = Chr9.LA), 

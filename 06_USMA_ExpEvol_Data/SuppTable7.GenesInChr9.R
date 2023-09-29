@@ -3,7 +3,7 @@
 # supp table 7
 
 ## Load libraries
-libraries <- c("data.table", "dplyr", "officer", "flextable")
+libraries <- c("data.table", "dplyr", "writexl", "openxlsx")
 
 
 # Check: if libraries is does not install, install, then just load it
@@ -45,15 +45,22 @@ df.Chr9.160kb$Chr <- gsub("USMA_521_v2_", "", df.Chr9.160kb$Chr)
 
 # Export as word document
 
-doc <- read_docx()
+# doc <- read_docx()
+# 
+# table2save <- flextable(df.Chr9.160kb)
+# 
+# doc <- body_add_flextable(doc, value = table2save)
+# 
+# 
+# print(doc, target = "SuppTable7.GenesIn160kbChr9.docx")
+# file.copy("SuppTable7.GenesIn160kbChr9.docx", getwd())  
 
-table2save <- flextable(df.Chr9.160kb)
 
-doc <- body_add_flextable(doc, value = table2save)
+## Update: export as Excel
+# df.Chr9.160kb
+excel_file <- "Supp.Table7.GenesIn160kbChr9.xlsx"
 
-
-print(doc, target = "SuppTable7.GenesIn160kbChr9.docx")
-file.copy("SuppTable7.GenesIn160kbChr9.docx", getwd())  
+write.xlsx(x = df.Chr9.160kb, file = excel_file)
 
 rm(list = ls())
 
